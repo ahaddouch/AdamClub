@@ -58,7 +58,28 @@ public:
 				"Échec de l'enregistrement", MessageBoxButtons::OK);
 		}
 	}
-	
+	void uploadv2() {
+		try {
+			String^ connString = "Data Source=ADAM;Initial Catalog=club;Integrated Security=True";
+			SqlConnection sqlConn(connString);
+			sqlConn.Open();
+
+			String^ sqlQuery = "INSERT INTO adherent (Id,nom,tel,dn,da)  VALUES (" + id.ToString() + "," + nom + "," + tel + "," + Convert::ToString(dn) + "," + Convert::ToString(dn) + ")";
+
+			SqlCommand command(sqlQuery, % sqlConn);
+			
+			command.ExecuteNonQuery();
+
+
+			MessageBox::Show("Adherent ajouter avec succes",
+				"Inscription reussie", MessageBoxButtons::OK);
+			sqlConn.Close();
+		}
+		catch (Exception^ ex) {
+			MessageBox::Show("Échec de l'enregistrement d'un nouvel adhérent",
+				"Échec de l'enregistrement", MessageBoxButtons::OK);
+		}
+	}
 	
 };
 

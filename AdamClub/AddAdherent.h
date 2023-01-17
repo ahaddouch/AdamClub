@@ -88,6 +88,10 @@ namespace AdamClub {
 		{
 			System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(AddAdherent::typeid));
 			this->panel1 = (gcnew System::Windows::Forms::Panel());
+			this->button6 = (gcnew System::Windows::Forms::Button());
+			this->button5 = (gcnew System::Windows::Forms::Button());
+			this->button4 = (gcnew System::Windows::Forms::Button());
+			this->button3 = (gcnew System::Windows::Forms::Button());
 			this->pictureBox1 = (gcnew System::Windows::Forms::PictureBox());
 			this->panel2 = (gcnew System::Windows::Forms::Panel());
 			this->dtn = (gcnew System::Windows::Forms::DateTimePicker());
@@ -102,10 +106,6 @@ namespace AdamClub {
 			this->label3 = (gcnew System::Windows::Forms::Label());
 			this->label2 = (gcnew System::Windows::Forms::Label());
 			this->label1 = (gcnew System::Windows::Forms::Label());
-			this->button3 = (gcnew System::Windows::Forms::Button());
-			this->button4 = (gcnew System::Windows::Forms::Button());
-			this->button5 = (gcnew System::Windows::Forms::Button());
-			this->button6 = (gcnew System::Windows::Forms::Button());
 			this->panel1->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->BeginInit();
 			this->panel2->SuspendLayout();
@@ -123,6 +123,42 @@ namespace AdamClub {
 			this->panel1->Name = L"panel1";
 			this->panel1->Size = System::Drawing::Size(978, 182);
 			this->panel1->TabIndex = 18;
+			// 
+			// button6
+			// 
+			this->button6->Location = System::Drawing::Point(791, 3);
+			this->button6->Name = L"button6";
+			this->button6->Size = System::Drawing::Size(187, 174);
+			this->button6->TabIndex = 4;
+			this->button6->Text = L"button3";
+			this->button6->UseVisualStyleBackColor = true;
+			// 
+			// button5
+			// 
+			this->button5->Location = System::Drawing::Point(606, 3);
+			this->button5->Name = L"button5";
+			this->button5->Size = System::Drawing::Size(187, 174);
+			this->button5->TabIndex = 4;
+			this->button5->Text = L"button3";
+			this->button5->UseVisualStyleBackColor = true;
+			// 
+			// button4
+			// 
+			this->button4->Location = System::Drawing::Point(421, 3);
+			this->button4->Name = L"button4";
+			this->button4->Size = System::Drawing::Size(187, 174);
+			this->button4->TabIndex = 4;
+			this->button4->Text = L"button3";
+			this->button4->UseVisualStyleBackColor = true;
+			// 
+			// button3
+			// 
+			this->button3->Location = System::Drawing::Point(237, 3);
+			this->button3->Name = L"button3";
+			this->button3->Size = System::Drawing::Size(187, 174);
+			this->button3->TabIndex = 4;
+			this->button3->Text = L"button3";
+			this->button3->UseVisualStyleBackColor = true;
 			// 
 			// pictureBox1
 			// 
@@ -161,7 +197,7 @@ namespace AdamClub {
 			this->dtn->Format = System::Windows::Forms::DateTimePickerFormat::Short;
 			this->dtn->Location = System::Drawing::Point(437, 264);
 			this->dtn->Name = L"dtn";
-			this->dtn->Size = System::Drawing::Size(264, 44);
+			this->dtn->Size = System::Drawing::Size(264, 32);
 			this->dtn->TabIndex = 28;
 			// 
 			// dta
@@ -170,7 +206,7 @@ namespace AdamClub {
 			this->dta->Format = System::Windows::Forms::DateTimePickerFormat::Short;
 			this->dta->Location = System::Drawing::Point(437, 334);
 			this->dta->Name = L"dta";
-			this->dta->Size = System::Drawing::Size(264, 44);
+			this->dta->Size = System::Drawing::Size(264, 32);
 			this->dta->TabIndex = 29;
 			// 
 			// button2
@@ -202,7 +238,7 @@ namespace AdamClub {
 			this->txt_tel->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 16));
 			this->txt_tel->Location = System::Drawing::Point(437, 200);
 			this->txt_tel->Name = L"txt_tel";
-			this->txt_tel->Size = System::Drawing::Size(264, 44);
+			this->txt_tel->Size = System::Drawing::Size(264, 32);
 			this->txt_tel->TabIndex = 23;
 			// 
 			// txt_nom
@@ -210,7 +246,7 @@ namespace AdamClub {
 			this->txt_nom->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 16));
 			this->txt_nom->Location = System::Drawing::Point(437, 127);
 			this->txt_nom->Name = L"txt_nom";
-			this->txt_nom->Size = System::Drawing::Size(264, 44);
+			this->txt_nom->Size = System::Drawing::Size(264, 32);
 			this->txt_nom->TabIndex = 24;
 			// 
 			// txt_id
@@ -218,7 +254,7 @@ namespace AdamClub {
 			this->txt_id->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 16));
 			this->txt_id->Location = System::Drawing::Point(437, 53);
 			this->txt_id->Name = L"txt_id";
-			this->txt_id->Size = System::Drawing::Size(264, 44);
+			this->txt_id->Size = System::Drawing::Size(264, 32);
 			this->txt_id->TabIndex = 25;
 			// 
 			// label5
@@ -229,7 +265,7 @@ namespace AdamClub {
 			this->label5->ImeMode = System::Windows::Forms::ImeMode::NoControl;
 			this->label5->Location = System::Drawing::Point(120, 340);
 			this->label5->Name = L"label5";
-			this->label5->Size = System::Drawing::Size(244, 37);
+			this->label5->Size = System::Drawing::Size(165, 26);
 			this->label5->TabIndex = 18;
 			this->label5->Text = L"Date d\'adherent";
 			// 
@@ -241,7 +277,7 @@ namespace AdamClub {
 			this->label4->ImeMode = System::Windows::Forms::ImeMode::NoControl;
 			this->label4->Location = System::Drawing::Point(120, 270);
 			this->label4->Name = L"label4";
-			this->label4->Size = System::Drawing::Size(287, 37);
+			this->label4->Size = System::Drawing::Size(196, 26);
 			this->label4->TabIndex = 19;
 			this->label4->Text = L"Date de Naissance";
 			// 
@@ -253,7 +289,7 @@ namespace AdamClub {
 			this->label3->ImeMode = System::Windows::Forms::ImeMode::NoControl;
 			this->label3->Location = System::Drawing::Point(120, 200);
 			this->label3->Name = L"label3";
-			this->label3->Size = System::Drawing::Size(167, 37);
+			this->label3->Size = System::Drawing::Size(113, 26);
 			this->label3->TabIndex = 20;
 			this->label3->Text = L"Telephone";
 			// 
@@ -265,7 +301,7 @@ namespace AdamClub {
 			this->label2->ImeMode = System::Windows::Forms::ImeMode::NoControl;
 			this->label2->Location = System::Drawing::Point(120, 130);
 			this->label2->Name = L"label2";
-			this->label2->Size = System::Drawing::Size(86, 37);
+			this->label2->Size = System::Drawing::Size(59, 26);
 			this->label2->TabIndex = 21;
 			this->label2->Text = L"Nom";
 			// 
@@ -277,45 +313,9 @@ namespace AdamClub {
 			this->label1->ImeMode = System::Windows::Forms::ImeMode::NoControl;
 			this->label1->Location = System::Drawing::Point(120, 60);
 			this->label1->Name = L"label1";
-			this->label1->Size = System::Drawing::Size(48, 37);
+			this->label1->Size = System::Drawing::Size(34, 26);
 			this->label1->TabIndex = 22;
 			this->label1->Text = L"ID";
-			// 
-			// button3
-			// 
-			this->button3->Location = System::Drawing::Point(237, 3);
-			this->button3->Name = L"button3";
-			this->button3->Size = System::Drawing::Size(187, 174);
-			this->button3->TabIndex = 4;
-			this->button3->Text = L"button3";
-			this->button3->UseVisualStyleBackColor = true;
-			// 
-			// button4
-			// 
-			this->button4->Location = System::Drawing::Point(421, 3);
-			this->button4->Name = L"button4";
-			this->button4->Size = System::Drawing::Size(187, 174);
-			this->button4->TabIndex = 4;
-			this->button4->Text = L"button3";
-			this->button4->UseVisualStyleBackColor = true;
-			// 
-			// button5
-			// 
-			this->button5->Location = System::Drawing::Point(606, 3);
-			this->button5->Name = L"button5";
-			this->button5->Size = System::Drawing::Size(187, 174);
-			this->button5->TabIndex = 4;
-			this->button5->Text = L"button3";
-			this->button5->UseVisualStyleBackColor = true;
-			// 
-			// button6
-			// 
-			this->button6->Location = System::Drawing::Point(791, 3);
-			this->button6->Name = L"button6";
-			this->button6->Size = System::Drawing::Size(187, 174);
-			this->button6->TabIndex = 4;
-			this->button6->Text = L"button3";
-			this->button6->UseVisualStyleBackColor = true;
 			// 
 			// AddAdherent
 			// 

@@ -1,6 +1,8 @@
 #include "AddAdherent.h"
 #include "Adherent.h"
 #include <iostream>
+#include "ModAdherent.h"
+#include "AfficherAdherent.h"
 //#include <vector>
 
 
@@ -12,8 +14,13 @@ void main()
 	Application::EnableVisualStyles();
 	Application::SetCompatibleTextRenderingDefault(false);
 
-	AdamClub::AddAdherent addadherent;
-	addadherent.ShowDialog();
+	//AdamClub::AddAdherent f;
+	//f.ShowDialog();
+
+	//AdamClub::AfficherAdherent aff;
+	//f.ShowDialog();
+	AdamClub::AddAdherent f;
+	f.ShowDialog();
 	
 	Adherent ad (87, "jggf", "gjgukh", DateTime::Now, DateTime::Now);
 	//Adherent^ adg = gcnew Adherent();
