@@ -1,5 +1,5 @@
 #pragma once
-
+#include "Adherent.h"
 namespace AdamClub {
 
 	using namespace System;
@@ -49,7 +49,7 @@ namespace AdamClub {
 	private: System::Windows::Forms::Label^ label2;
 	private: System::Windows::Forms::Label^ label1;
 	private: System::Windows::Forms::ListBox^ lb;
-	private: System::Windows::Forms::ListView^ lv;
+
 
 
 
@@ -66,6 +66,7 @@ namespace AdamClub {
 		/// </summary>
 		void InitializeComponent(void)
 		{
+			System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(ModAdherent::typeid));
 			this->dtn = (gcnew System::Windows::Forms::DateTimePicker());
 			this->dta = (gcnew System::Windows::Forms::DateTimePicker());
 			this->button2 = (gcnew System::Windows::Forms::Button());
@@ -78,7 +79,6 @@ namespace AdamClub {
 			this->label2 = (gcnew System::Windows::Forms::Label());
 			this->label1 = (gcnew System::Windows::Forms::Label());
 			this->lb = (gcnew System::Windows::Forms::ListBox());
-			this->lv = (gcnew System::Windows::Forms::ListView());
 			this->SuspendLayout();
 			// 
 			// dtn
@@ -115,12 +115,13 @@ namespace AdamClub {
 			// 
 			this->button1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 16));
 			this->button1->ImeMode = System::Windows::Forms::ImeMode::NoControl;
-			this->button1->Location = System::Drawing::Point(330, 398);
+			this->button1->Location = System::Drawing::Point(348, 398);
 			this->button1->Name = L"button1";
 			this->button1->Size = System::Drawing::Size(165, 51);
 			this->button1->TabIndex = 39;
-			this->button1->Text = L"Ajouter";
+			this->button1->Text = L"Modifier";
 			this->button1->UseVisualStyleBackColor = true;
+			this->button1->Click += gcnew System::EventHandler(this, &ModAdherent::button1_Click);
 			// 
 			// txt_tel
 			// 
@@ -207,15 +208,7 @@ namespace AdamClub {
 			this->lb->Name = L"lb";
 			this->lb->Size = System::Drawing::Size(264, 29);
 			this->lb->TabIndex = 42;
-			// 
-			// lv
-			// 
-			this->lv->HideSelection = false;
-			this->lv->Location = System::Drawing::Point(220, 26);
-			this->lv->Name = L"lv";
-			this->lv->Size = System::Drawing::Size(152, 34);
-			this->lv->TabIndex = 43;
-			this->lv->UseCompatibleStateImageBehavior = false;
+			this->lb->SelectedIndexChanged += gcnew System::EventHandler(this, &ModAdherent::lb_SelectedIndexChanged);
 			// 
 			// ModAdherent
 			// 
@@ -224,7 +217,7 @@ namespace AdamClub {
 			this->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(13)), static_cast<System::Int32>(static_cast<System::Byte>(27)),
 				static_cast<System::Int32>(static_cast<System::Byte>(48)));
 			this->ClientSize = System::Drawing::Size(766, 477);
-			this->Controls->Add(this->lv);
+			this->ControlBox = false;
 			this->Controls->Add(this->lb);
 			this->Controls->Add(this->dtn);
 			this->Controls->Add(this->dta);
@@ -237,6 +230,7 @@ namespace AdamClub {
 			this->Controls->Add(this->label3);
 			this->Controls->Add(this->label2);
 			this->Controls->Add(this->label1);
+			this->Icon = (cli::safe_cast<System::Drawing::Icon^>(resources->GetObject(L"$this.Icon")));
 			this->Name = L"ModAdherent";
 			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
 			this->Text = L"ModAdherent";
@@ -264,20 +258,17 @@ namespace AdamClub {
 			SqlCommand^ command = connection->CreateCommand();
 
 			// Set the command text
-			command->CommandText = "SELECT id, nom FROM adherent";
+			command->CommandText = "SELECT id FROM adherent";
 
 			// Execute the command
 			SqlDataReader^ reader = command->ExecuteReader();
 
 			// Clear the ListBox
 			lb->Items->Clear();
-			lv->Items->Clear();
 
 			// Add items to the ListBox
 			while (reader->Read()) {
-				String^ item = reader->GetInt32(0) + " - " + reader->GetString(1);
-				lb->Items->Add(item);
-				lv->Items->Add(item);
+				lb->Items->Add(reader->GetInt32(0));
 			}
 
 			// Close the reader
@@ -287,14 +278,66 @@ namespace AdamClub {
 			connection->Close();
 		}
 		catch (Exception^ ex) {
-			MessageBox::Show("Échec de l'enregistrement d'un nouvel adhérent",
-				"Échec de l'enregistrement", MessageBoxButtons::OK);
-			//std::cout << "Error retrieving data: " << ex->Message << std::endl;
+			MessageBox::Show("Échec de connection",
+				"erroooor", MessageBoxButtons::OK);
 		}
+		
 
 	}
 private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e) {
 	this->Close();
+}
+private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
+	int id = Convert::ToInt64(lb->Text);
+	String^ nom = txt_nom->Text->ToString();
+	String^ tel = txt_tel->Text->ToString();
+	DateTime^ dn = dtn->Value;
+	DateTime^ da = dta->Value;
+	Adherent ad(id, nom, tel, dn, da);
+	ad.Update();
+}
+private: System::Void lb_SelectedIndexChanged(System::Object^ sender, System::EventArgs^ e) {
+
+	
+	////////////////////////////////////////////////////////////////////////////
+	txt_nom->Clear();
+	txt_tel->Clear();
+
+	// Create a connection object
+	SqlConnection^ connection = gcnew SqlConnection(connString);
+
+	try {
+		// Open the connection
+		connection->Open();
+
+		// Create a command object
+		SqlCommand^ command = connection->CreateCommand();
+		int id =Convert::ToInt64(lb->Text) ;
+		// Set the command text
+		command->CommandText = "SELECT  nom,tele,dn,da  FROM adherent WHERE Id = @id";
+		command->Parameters->AddWithValue("@id", id);
+
+		// Execute the command
+		SqlDataReader^ reader = command->ExecuteReader();
+
+		// Check if the query returned any rows
+		if (reader->Read()) {
+			txt_nom->Text = reader->GetString(0);
+			txt_tel->Text = reader->GetString(1);
+			dtn->Value = reader->GetDateTime(2);
+			dta->Value = reader->GetDateTime(3);
+		}
+
+		// Close the reader
+		reader->Close();
+
+		// Close the connection
+		connection->Close();
+	}
+	catch (Exception^ ex) {
+		MessageBox::Show("moxkil f cenection",
+			"erroooor", MessageBoxButtons::OK);
+	}
 }
 };
 }

@@ -126,6 +126,7 @@
     <ClCompile Include="AddAdherent.cpp" />
     <ClCompile Include="Adherent.cpp" />
     <ClCompile Include="AfficherAdherent.cpp" />
+    <ClCompile Include="AjouAdherent.cpp" />
     <ClCompile Include="ModAdherent.cpp" />
     <ClCompile Include="Program.cpp" />
     <ClCompile Include="SuprAdherent.cpp" />
@@ -136,6 +137,9 @@
     </ClInclude>
     <ClInclude Include="Adherent.h" />
     <ClInclude Include="AfficherAdherent.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="AjouAdherent.h">
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="ModAdherent.h">
@@ -152,8 +156,14 @@
     <EmbeddedResource Include="AfficherAdherent.resx">
       <DependentUpon>AfficherAdherent.h</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="AjouAdherent.resx">
+      <DependentUpon>AjouAdherent.h</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ModAdherent.resx">
       <DependentUpon>ModAdherent.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SuprAdherent.resx">
+      <DependentUpon>SuprAdherent.h</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

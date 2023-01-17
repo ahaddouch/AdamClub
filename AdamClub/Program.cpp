@@ -3,6 +3,7 @@
 #include <iostream>
 #include "ModAdherent.h"
 #include "AfficherAdherent.h"
+#include "SuprAdherent.h"
 //#include <vector>
 
 
@@ -19,7 +20,7 @@ void main()
 
 	//AdamClub::AfficherAdherent aff;
 	//f.ShowDialog();
-	AdamClub::AddAdherent f;
+	AdamClub::SuprAdherent f;
 	f.ShowDialog();
 	
 	Adherent ad (87, "jggf", "gjgukh", DateTime::Now, DateTime::Now);
