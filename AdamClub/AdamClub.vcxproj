@@ -126,8 +126,12 @@
     <ClCompile Include="AddAdherent.cpp" />
     <ClCompile Include="Adherent.cpp" />
     <ClCompile Include="AfficherAdherent.cpp" />
-    <ClCompile Include="AjouAdherent.cpp" />
+    <ClCompile Include="AtherentMain.cpp" />
+    <ClCompile Include="Entraineur.cpp" />
+    <ClCompile Include="EntraineurP.cpp" />
+    <ClCompile Include="EntraineurV.cpp" />
     <ClCompile Include="ModAdherent.cpp" />
+    <ClCompile Include="Personne.cpp" />
     <ClCompile Include="Program.cpp" />
     <ClCompile Include="SuprAdherent.cpp" />
   </ItemGroup>
@@ -139,12 +143,16 @@
     <ClInclude Include="AfficherAdherent.h">
       <FileType>CppForm</FileType>
     </ClInclude>
-    <ClInclude Include="AjouAdherent.h">
+    <ClInclude Include="AtherentMain.h">
       <FileType>CppForm</FileType>
     </ClInclude>
+    <ClInclude Include="Entraineur.h" />
+    <ClInclude Include="EntraineurP.h" />
+    <ClInclude Include="EntraineurV.h" />
     <ClInclude Include="ModAdherent.h">
       <FileType>CppForm</FileType>
     </ClInclude>
+    <ClInclude Include="Personne.h" />
     <ClInclude Include="SuprAdherent.h">
       <FileType>CppForm</FileType>
     </ClInclude>
@@ -156,8 +164,8 @@
     <EmbeddedResource Include="AfficherAdherent.resx">
       <DependentUpon>AfficherAdherent.h</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="AjouAdherent.resx">
-      <DependentUpon>AjouAdherent.h</DependentUpon>
+    <EmbeddedResource Include="AtherentMain.resx">
+      <DependentUpon>AtherentMain.h</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ModAdherent.resx">
       <DependentUpon>ModAdherent.h</DependentUpon>

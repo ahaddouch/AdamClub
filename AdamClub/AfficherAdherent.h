@@ -85,11 +85,13 @@ namespace AdamClub {
 				static_cast<System::Int32>(static_cast<System::Byte>(27)), static_cast<System::Int32>(static_cast<System::Byte>(48)));
 			this->dataGridView1->CellBorderStyle = System::Windows::Forms::DataGridViewCellBorderStyle::Sunken;
 			this->dataGridView1->ColumnHeadersHeight = 34;
-			this->dataGridView1->Location = System::Drawing::Point(0, 129);
+			this->dataGridView1->Dock = System::Windows::Forms::DockStyle::Bottom;
+			this->dataGridView1->Location = System::Drawing::Point(0, 254);
+			this->dataGridView1->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->dataGridView1->Name = L"dataGridView1";
 			this->dataGridView1->RowHeadersWidth = 62;
 			this->dataGridView1->RowTemplate->Height = 28;
-			this->dataGridView1->Size = System::Drawing::Size(955, 371);
+			this->dataGridView1->Size = System::Drawing::Size(1300, 393);
 			this->dataGridView1->TabIndex = 0;
 			// 
 			// bindingSource1
@@ -98,36 +100,41 @@ namespace AdamClub {
 			// 
 			// txt_find
 			// 
-			this->txt_find->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 16, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->txt_find->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 15.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->txt_find->Location = System::Drawing::Point(256, 48);
+			this->txt_find->Location = System::Drawing::Point(353, 112);
+			this->txt_find->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->txt_find->Name = L"txt_find";
-			this->txt_find->Size = System::Drawing::Size(419, 32);
+			this->txt_find->Size = System::Drawing::Size(314, 31);
 			this->txt_find->TabIndex = 1;
 			// 
 			// btn_find
 			// 
 			this->btn_find->BackColor = System::Drawing::Color::LightSteelBlue;
 			this->btn_find->Cursor = System::Windows::Forms::Cursors::Hand;
-			this->btn_find->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 16));
-			this->btn_find->Location = System::Drawing::Point(730, 42);
+			this->btn_find->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 15.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->btn_find->Location = System::Drawing::Point(731, 99);
+			this->btn_find->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->btn_find->Name = L"btn_find";
-			this->btn_find->Size = System::Drawing::Size(172, 43);
+			this->btn_find->Size = System::Drawing::Size(148, 57);
 			this->btn_find->TabIndex = 2;
 			this->btn_find->Text = L"Find";
 			this->btn_find->UseVisualStyleBackColor = false;
+			this->btn_find->Click += gcnew System::EventHandler(this, &AfficherAdherent::btn_find_Click);
 			// 
 			// AfficherAdherent
 			// 
-			this->AutoScaleDimensions = System::Drawing::SizeF(9, 20);
+			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(13)), static_cast<System::Int32>(static_cast<System::Byte>(27)),
 				static_cast<System::Int32>(static_cast<System::Byte>(48)));
-			this->ClientSize = System::Drawing::Size(956, 505);
+			this->ClientSize = System::Drawing::Size(1300, 647);
 			this->Controls->Add(this->btn_find);
 			this->Controls->Add(this->txt_find);
 			this->Controls->Add(this->dataGridView1);
 			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::None;
+			this->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->Name = L"AfficherAdherent";
 			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
 			this->Text = L"AfficherAdherent";
@@ -183,5 +190,7 @@ namespace AdamClub {
 
 
 	}
+private: System::Void btn_find_Click(System::Object^ sender, System::EventArgs^ e) {
+}
 };
 }

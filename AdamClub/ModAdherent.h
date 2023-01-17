@@ -53,6 +53,11 @@ namespace AdamClub {
 
 
 
+
+
+
+
+
 	private:
 		/// <summary>
 		/// Required designer variable.
@@ -83,27 +88,27 @@ namespace AdamClub {
 			// 
 			// dtn
 			// 
-			this->dtn->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 16));
+			this->dtn->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 20));
 			this->dtn->Format = System::Windows::Forms::DateTimePickerFormat::Short;
-			this->dtn->Location = System::Drawing::Point(393, 266);
+			this->dtn->Location = System::Drawing::Point(666, 321);
 			this->dtn->Name = L"dtn";
-			this->dtn->Size = System::Drawing::Size(264, 32);
+			this->dtn->Size = System::Drawing::Size(250, 38);
 			this->dtn->TabIndex = 40;
 			// 
 			// dta
 			// 
-			this->dta->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 16));
+			this->dta->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 20));
 			this->dta->Format = System::Windows::Forms::DateTimePickerFormat::Short;
-			this->dta->Location = System::Drawing::Point(393, 336);
+			this->dta->Location = System::Drawing::Point(666, 391);
 			this->dta->Name = L"dta";
-			this->dta->Size = System::Drawing::Size(264, 32);
+			this->dta->Size = System::Drawing::Size(250, 38);
 			this->dta->TabIndex = 41;
 			// 
 			// button2
 			// 
-			this->button2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 16));
+			this->button2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 20));
 			this->button2->ImeMode = System::Windows::Forms::ImeMode::NoControl;
-			this->button2->Location = System::Drawing::Point(535, 398);
+			this->button2->Location = System::Drawing::Point(1055, 526);
 			this->button2->Name = L"button2";
 			this->button2->Size = System::Drawing::Size(167, 51);
 			this->button2->TabIndex = 38;
@@ -113,11 +118,11 @@ namespace AdamClub {
 			// 
 			// button1
 			// 
-			this->button1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 16));
+			this->button1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 20));
 			this->button1->ImeMode = System::Windows::Forms::ImeMode::NoControl;
-			this->button1->Location = System::Drawing::Point(348, 398);
+			this->button1->Location = System::Drawing::Point(868, 526);
 			this->button1->Name = L"button1";
-			this->button1->Size = System::Drawing::Size(165, 51);
+			this->button1->Size = System::Drawing::Size(167, 51);
 			this->button1->TabIndex = 39;
 			this->button1->Text = L"Modifier";
 			this->button1->UseVisualStyleBackColor = true;
@@ -125,99 +130,99 @@ namespace AdamClub {
 			// 
 			// txt_tel
 			// 
-			this->txt_tel->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 16));
-			this->txt_tel->Location = System::Drawing::Point(393, 202);
+			this->txt_tel->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 20));
+			this->txt_tel->Location = System::Drawing::Point(666, 257);
 			this->txt_tel->Name = L"txt_tel";
-			this->txt_tel->Size = System::Drawing::Size(264, 32);
+			this->txt_tel->Size = System::Drawing::Size(250, 38);
 			this->txt_tel->TabIndex = 35;
 			// 
 			// txt_nom
 			// 
-			this->txt_nom->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 16));
-			this->txt_nom->Location = System::Drawing::Point(393, 132);
+			this->txt_nom->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 20));
+			this->txt_nom->Location = System::Drawing::Point(666, 187);
 			this->txt_nom->Name = L"txt_nom";
-			this->txt_nom->Size = System::Drawing::Size(264, 32);
+			this->txt_nom->Size = System::Drawing::Size(250, 38);
 			this->txt_nom->TabIndex = 36;
 			// 
 			// label5
 			// 
 			this->label5->AutoSize = true;
-			this->label5->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 16));
+			this->label5->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 20));
 			this->label5->ForeColor = System::Drawing::Color::White;
 			this->label5->ImeMode = System::Windows::Forms::ImeMode::NoControl;
-			this->label5->Location = System::Drawing::Point(76, 342);
+			this->label5->Location = System::Drawing::Point(352, 397);
 			this->label5->Name = L"label5";
-			this->label5->Size = System::Drawing::Size(165, 26);
+			this->label5->Size = System::Drawing::Size(206, 31);
 			this->label5->TabIndex = 30;
 			this->label5->Text = L"Date d\'adherent";
 			// 
 			// label4
 			// 
 			this->label4->AutoSize = true;
-			this->label4->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 16));
+			this->label4->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 20));
 			this->label4->ForeColor = System::Drawing::Color::White;
 			this->label4->ImeMode = System::Windows::Forms::ImeMode::NoControl;
-			this->label4->Location = System::Drawing::Point(76, 272);
+			this->label4->Location = System::Drawing::Point(352, 327);
 			this->label4->Name = L"label4";
-			this->label4->Size = System::Drawing::Size(196, 26);
+			this->label4->Size = System::Drawing::Size(244, 31);
 			this->label4->TabIndex = 31;
 			this->label4->Text = L"Date de Naissance";
 			// 
 			// label3
 			// 
 			this->label3->AutoSize = true;
-			this->label3->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 16));
+			this->label3->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 20));
 			this->label3->ForeColor = System::Drawing::Color::White;
 			this->label3->ImeMode = System::Windows::Forms::ImeMode::NoControl;
-			this->label3->Location = System::Drawing::Point(76, 202);
+			this->label3->Location = System::Drawing::Point(352, 260);
 			this->label3->Name = L"label3";
-			this->label3->Size = System::Drawing::Size(113, 26);
+			this->label3->Size = System::Drawing::Size(142, 31);
 			this->label3->TabIndex = 32;
 			this->label3->Text = L"Telephone";
 			// 
 			// label2
 			// 
 			this->label2->AutoSize = true;
-			this->label2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 16));
+			this->label2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 20));
 			this->label2->ForeColor = System::Drawing::Color::White;
 			this->label2->ImeMode = System::Windows::Forms::ImeMode::NoControl;
-			this->label2->Location = System::Drawing::Point(76, 132);
+			this->label2->Location = System::Drawing::Point(352, 190);
 			this->label2->Name = L"label2";
-			this->label2->Size = System::Drawing::Size(59, 26);
+			this->label2->Size = System::Drawing::Size(71, 31);
 			this->label2->TabIndex = 33;
 			this->label2->Text = L"Nom";
 			// 
 			// label1
 			// 
 			this->label1->AutoSize = true;
-			this->label1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 16));
+			this->label1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 20));
 			this->label1->ForeColor = System::Drawing::Color::White;
 			this->label1->ImeMode = System::Windows::Forms::ImeMode::NoControl;
-			this->label1->Location = System::Drawing::Point(76, 62);
+			this->label1->Location = System::Drawing::Point(352, 119);
 			this->label1->Name = L"label1";
-			this->label1->Size = System::Drawing::Size(34, 26);
+			this->label1->Size = System::Drawing::Size(42, 31);
 			this->label1->TabIndex = 34;
 			this->label1->Text = L"ID";
+			this->label1->Click += gcnew System::EventHandler(this, &ModAdherent::label1_Click);
 			// 
 			// lb
 			// 
-			this->lb->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 16));
+			this->lb->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 20));
 			this->lb->FormattingEnabled = true;
-			this->lb->ItemHeight = 25;
-			this->lb->Location = System::Drawing::Point(393, 62);
+			this->lb->ItemHeight = 31;
+			this->lb->Location = System::Drawing::Point(666, 97);
 			this->lb->Name = L"lb";
-			this->lb->Size = System::Drawing::Size(264, 29);
+			this->lb->Size = System::Drawing::Size(250, 66);
 			this->lb->TabIndex = 42;
 			this->lb->SelectedIndexChanged += gcnew System::EventHandler(this, &ModAdherent::lb_SelectedIndexChanged);
 			// 
 			// ModAdherent
 			// 
-			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::None;
-			this->AutoSize = true;
+			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
+			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(13)), static_cast<System::Int32>(static_cast<System::Byte>(27)),
 				static_cast<System::Int32>(static_cast<System::Byte>(48)));
-			this->ClientSize = System::Drawing::Size(766, 477);
-			this->ControlBox = false;
+			this->ClientSize = System::Drawing::Size(1284, 608);
 			this->Controls->Add(this->lb);
 			this->Controls->Add(this->dtn);
 			this->Controls->Add(this->dta);
@@ -230,6 +235,7 @@ namespace AdamClub {
 			this->Controls->Add(this->label3);
 			this->Controls->Add(this->label2);
 			this->Controls->Add(this->label1);
+			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::None;
 			this->Icon = (cli::safe_cast<System::Drawing::Icon^>(resources->GetObject(L"$this.Icon")));
 			this->Name = L"ModAdherent";
 			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
@@ -338,6 +344,9 @@ private: System::Void lb_SelectedIndexChanged(System::Object^ sender, System::Ev
 		MessageBox::Show("moxkil f cenection",
 			"erroooor", MessageBoxButtons::OK);
 	}
+}
+
+private: System::Void label1_Click(System::Object^ sender, System::EventArgs^ e) {
 }
 };
 }

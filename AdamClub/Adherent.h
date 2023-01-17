@@ -1,5 +1,6 @@
 #pragma once
 #include <iostream>
+#include "Personne.h"
 //#include <vector>
 using namespace System::Data;
 using namespace System;
@@ -7,13 +8,10 @@ using namespace std;
 using namespace System::Data::SqlClient;
 using namespace System::Windows::Forms;
 using namespace System::Data;
-ref class Adherent
+ref class Adherent:public Personne
 {
 private:
-	int id;
-	String^ nom;
-	String^ tel;
-	DateTime^ dn;
+	
 	DateTime^ da;
 
 public:
@@ -144,6 +142,8 @@ public:
 
 			// Close the connection
 			connection->Close();
+			MessageBox::Show(" Suprimer  adhérent avec secces",
+				"succes", MessageBoxButtons::OK);
 		}
 		catch (Exception^ ex) {
 			MessageBox::Show("Échec de supresion  l'adhérent",
