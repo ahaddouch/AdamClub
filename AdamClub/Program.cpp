@@ -8,6 +8,8 @@
 #include "ClubMenu.h"
 #include "AddEntraineur.h"
 #include "ModEntraineur.h"
+#include "EquipementMain.h"
+
 //#include <vector>
 
 

@@ -137,37 +137,27 @@ namespace AdamClub {
 	private: System::Void AfficherAdherent_Load(System::Object^ sender, System::EventArgs^ e) {
 		String^ connectionString = "Data Source=ADAM;Initial Catalog=club;Integrated Security=True";
 
-		// Create a connection object
-		SqlConnection^ connection = gcnew SqlConnection(connectionString);
+ 		SqlConnection^ connection = gcnew SqlConnection(connectionString);
 
 		try {
-			// Open the connection
-			connection->Open();
+ 			connection->Open();
 
-			// Create a command object
-			SqlCommand^ command = connection->CreateCommand();
+ 			SqlCommand^ command = connection->CreateCommand();
 
-			// Set the command text
-			command->CommandText = "SELECT * FROM adherent";
+ 			command->CommandText = "SELECT * FROM adherent";
 
-			// Create a data adapter
-			SqlDataAdapter^ dataAdapter = gcnew SqlDataAdapter(command);
+ 			SqlDataAdapter^ dataAdapter = gcnew SqlDataAdapter(command);
 
-			// Create a data set
-			DataSet^ dataSet = gcnew DataSet();
+ 			DataSet^ dataSet = gcnew DataSet();
 
-			// Fill the data set with data from the table
-			dataAdapter->Fill(dataSet, "adherent");
+ 			dataAdapter->Fill(dataSet, "adherent");
 
-			// Create a BindingSource
-			BindingSource^ bindingSource = gcnew BindingSource();
+ 			BindingSource^ bindingSource = gcnew BindingSource();
 			bindingSource->DataSource = dataSet->Tables["adherent"];
 
-			// Bind the BindingSource to the DataGridView control
-			dataGridView1->DataSource = bindingSource;
+ 			dataGridView1->DataSource = bindingSource;
 
-			// Close the connection
-			connection->Close();
+ 			connection->Close();
 		}
 		catch (Exception^ ex) {
 			MessageBox::Show("Échec de l'enregistrement d'un nouvel adhérent",
@@ -181,38 +171,28 @@ private: System::Void btn_find_Click(System::Object^ sender, System::EventArgs^ 
 private: System::Void txt_find_TextChanged(System::Object^ sender, System::EventArgs^ e) {
 	String^ connectionString = "Data Source=ADAM;Initial Catalog=club;Integrated Security=True";
 
-	// Create a connection object
-	SqlConnection^ connection = gcnew SqlConnection(connectionString);
+ 	SqlConnection^ connection = gcnew SqlConnection(connectionString);
 
 	try {
-		// Open the connection
-		connection->Open();
+ 		connection->Open();
 
-		// Create a command object
-		SqlCommand^ command = connection->CreateCommand();
+ 		SqlCommand^ command = connection->CreateCommand();
 
-		// Set the command text
-		command->CommandText = "SELECT * FROM adherent where Id like '%@txt% '";
+ 		command->CommandText = "SELECT * FROM adherent where Id like '%@txt% '";
 		command->Parameters->AddWithValue("@txt",Convert::ToInt64( txt_find->Text->ToString()));
 
-		// Create a data adapter
-		SqlDataAdapter^ dataAdapter = gcnew SqlDataAdapter(command);
+ 		SqlDataAdapter^ dataAdapter = gcnew SqlDataAdapter(command);
 
-		// Create a data set
-		DataSet^ dataSet = gcnew DataSet();
+ 		DataSet^ dataSet = gcnew DataSet();
 
-		// Fill the data set with data from the table
-		dataAdapter->Fill(dataSet, "adherent");
+ 		dataAdapter->Fill(dataSet, "adherent");
 
-		// Create a BindingSource
-		BindingSource^ bindingSource = gcnew BindingSource();
+ 		BindingSource^ bindingSource = gcnew BindingSource();
 		bindingSource->DataSource = dataSet->Tables["adherent"];
 
-		// Bind the BindingSource to the DataGridView control
-		dataGridView1->DataSource = bindingSource;
+ 		dataGridView1->DataSource = bindingSource;
 
-		// Close the connection
-		connection->Close();
+ 		connection->Close();
 	}
 	catch (Exception^ ex) {
 		MessageBox::Show("moxkil of get data",

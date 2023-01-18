@@ -1,8 +1,8 @@
 #pragma once
+#include "Equipement.h"
 
 namespace AdamClub {
 
-	using namespace System::Data::SqlClient;
 	using namespace System;
 	using namespace System::ComponentModel;
 	using namespace System::Collections;
@@ -11,12 +11,12 @@ namespace AdamClub {
 	using namespace System::Drawing;
 
 	/// <summary>
-	/// Summary for AfficherEntraineur
+	/// Summary for AfficherEquipement
 	/// </summary>
-	public ref class AfficherEntraineur : public System::Windows::Forms::Form
+	public ref class AfficherEquipement : public System::Windows::Forms::Form
 	{
 	public:
-		AfficherEntraineur(void)
+		AfficherEquipement(void)
 		{
 			InitializeComponent();
 			//
@@ -28,36 +28,24 @@ namespace AdamClub {
 		/// <summary>
 		/// Clean up any resources being used.
 		/// </summary>
-		~AfficherEntraineur()
+		~AfficherEquipement()
 		{
 			if (components)
 			{
 				delete components;
 			}
 		}
-
-	protected:
 	private: System::Windows::Forms::TextBox^ txt_find;
-	private: System::Windows::Forms::DataGridView^ dataGridView1;
-
 	protected:
-
-
-
-
-
-
-
-
-
-
-
+	private: System::Windows::Forms::BindingSource^ bindingSource1;
+	private: System::Windows::Forms::DataGridView^ dataGridView1;
+	private: System::ComponentModel::IContainer^ components;
 
 	private:
 		/// <summary>
 		/// Required designer variable.
 		/// </summary>
-		System::ComponentModel::Container ^components;
+
 
 #pragma region Windows Form Designer generated code
 		/// <summary>
@@ -66,8 +54,11 @@ namespace AdamClub {
 		/// </summary>
 		void InitializeComponent(void)
 		{
+			this->components = (gcnew System::ComponentModel::Container());
 			this->txt_find = (gcnew System::Windows::Forms::TextBox());
+			this->bindingSource1 = (gcnew System::Windows::Forms::BindingSource(this->components));
 			this->dataGridView1 = (gcnew System::Windows::Forms::DataGridView());
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->bindingSource1))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->BeginInit();
 			this->SuspendLayout();
 			// 
@@ -75,12 +66,12 @@ namespace AdamClub {
 			// 
 			this->txt_find->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 15.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->txt_find->Location = System::Drawing::Point(421, 91);
+			this->txt_find->Location = System::Drawing::Point(464, 55);
 			this->txt_find->Margin = System::Windows::Forms::Padding(2);
 			this->txt_find->Name = L"txt_find";
 			this->txt_find->Size = System::Drawing::Size(314, 31);
-			this->txt_find->TabIndex = 4;
-			this->txt_find->TextChanged += gcnew System::EventHandler(this, &AfficherEntraineur::AfficherEntraineur_Load);
+			this->txt_find->TabIndex = 3;
+			this->txt_find->Tag = L"jjjjjjjjj";
 			// 
 			// dataGridView1
 			// 
@@ -98,9 +89,9 @@ namespace AdamClub {
 			this->dataGridView1->RowHeadersWidth = 62;
 			this->dataGridView1->RowTemplate->Height = 28;
 			this->dataGridView1->Size = System::Drawing::Size(1284, 393);
-			this->dataGridView1->TabIndex = 3;
+			this->dataGridView1->TabIndex = 2;
 			// 
-			// AfficherEntraineur
+			// AfficherEquipement
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
@@ -110,16 +101,17 @@ namespace AdamClub {
 			this->Controls->Add(this->txt_find);
 			this->Controls->Add(this->dataGridView1);
 			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::None;
-			this->Name = L"AfficherEntraineur";
-			this->Text = L"AfficherEntraineur";
-			this->Load += gcnew System::EventHandler(this, &AfficherEntraineur::AfficherEntraineur_Load);
+			this->Name = L"AfficherEquipement";
+			this->Text = L" ";
+			this->Load += gcnew System::EventHandler(this, &AfficherEquipement::AfficherEquipement_Load);
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->bindingSource1))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->EndInit();
 			this->ResumeLayout(false);
 			this->PerformLayout();
 
 		}
 #pragma endregion
-	private: System::Void AfficherEntraineur_Load(System::Object^ sender, System::EventArgs^ e) {
+	private: System::Void AfficherEquipement_Load(System::Object^ sender, System::EventArgs^ e) {
 		String^ connectionString = "Data Source=ADAM;Initial Catalog=club;Integrated Security=True";
 
 		SqlConnection^ connection = gcnew SqlConnection(connectionString);
@@ -129,34 +121,25 @@ namespace AdamClub {
 
 			SqlCommand^ command = connection->CreateCommand();
 
-			command->CommandText = "SELECT * FROM entraineur";
+			command->CommandText = "SELECT * FROM equipement";
 
 			SqlDataAdapter^ dataAdapter = gcnew SqlDataAdapter(command);
 
 			DataSet^ dataSet = gcnew DataSet();
 
-			dataAdapter->Fill(dataSet, "entraineur");
+			dataAdapter->Fill(dataSet, "equipement");
 
 			BindingSource^ bindingSource = gcnew BindingSource();
-			bindingSource->DataSource = dataSet->Tables["entraineur"];
-			
-			dataGridView1->DataSource = bindingSource;
-			
-			
+			bindingSource->DataSource = dataSet->Tables["equipement"];
 
-			
+			dataGridView1->DataSource = bindingSource;
+
 			connection->Close();
-			
 		}
 		catch (Exception^ ex) {
-			MessageBox::Show("moxkil get data fom sql server",
-				"Échec data", MessageBoxButtons::OK);
+			MessageBox::Show("Échec de l'enregistrement d'un nouvel Equipement",
+				"Échec de l'enregistrement", MessageBoxButtons::OK);
 		}
-
-
 	}
-private: System::Void txt_find_TextChanged(System::Object^ sender, System::EventArgs^ e) {
-	
-}
-};
+	};
 }

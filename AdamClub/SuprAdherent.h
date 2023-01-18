@@ -172,76 +172,63 @@ namespace AdamClub {
 #pragma endregion
 		public:
 			String^ connString = "Data Source=ADAM;Initial Catalog=club;Integrated Security=True";
-	private: System::Void SuprAdherent_Load(System::Object^ sender, System::EventArgs^ e) {
-		// Create a connection object
-		SqlConnection^ connection = gcnew SqlConnection(connString);
+			void afterdelete() {
+				lb->Items->Clear();
+				txt_nom->Clear();
+				SqlConnection^ connection = gcnew SqlConnection(connString);
 
-		try {
-			// Open the connection
-			connection->Open();
+				try {
+					connection->Open();
 
-			// Create a command object
-			SqlCommand^ command = connection->CreateCommand();
+					SqlCommand^ command = connection->CreateCommand();
 
-			// Set the command text
-			command->CommandText = "SELECT id FROM adherent";
+					command->CommandText = "SELECT id FROM adherent";
 
-			// Execute the command
-			SqlDataReader^ reader = command->ExecuteReader();
+					SqlDataReader^ reader = command->ExecuteReader();
 
-			// Clear the ListBox
-			lb->Items->Clear();
+					lb->Items->Clear();
 
-			// Add items to the ListBox
-			while (reader->Read()) {
-				lb->Items->Add(reader->GetInt32(0));
+					while (reader->Read()) {
+						lb->Items->Add(reader->GetInt32(0));
+					}
+
+					reader->Close();
+
+					connection->Close();
+				}
+				catch (Exception^ ex) {
+					MessageBox::Show("Échec de connection",
+						"erroooor", MessageBoxButtons::OK);
+				}
 			}
-
-			// Close the reader
-			reader->Close();
-
-			// Close the connection
-			connection->Close();
-		}
-		catch (Exception^ ex) {
-			MessageBox::Show("Échec de connection",
-				"erroooor", MessageBoxButtons::OK);
-		}
+	private: System::Void SuprAdherent_Load(System::Object^ sender, System::EventArgs^ e) {
+		afterdelete();
 	}
 private: System::Void lb_SelectedIndexChanged(System::Object^ sender, System::EventArgs^ e) {
 
-	////////////////////////////////////////////////////////////////////////////
-	txt_nom->Clear();
+ 	txt_nom->Clear();
 	
 
-	// Create a connection object
-	SqlConnection^ connection = gcnew SqlConnection(connString);
+ 	SqlConnection^ connection = gcnew SqlConnection(connString);
 
 	try {
-		// Open the connection
-		connection->Open();
+ 		connection->Open();
 
-		// Create a command object
-		SqlCommand^ command = connection->CreateCommand();
+ 		SqlCommand^ command = connection->CreateCommand();
 		int id = Convert::ToInt64(lb->Text);
-		// Set the command text
-		command->CommandText = "SELECT  nom,tele,dn,da  FROM adherent WHERE Id = @id";
+ 		command->CommandText = "SELECT  nom,tele,dn,da  FROM adherent WHERE Id = @id";
 		command->Parameters->AddWithValue("@id", id);
 
-		// Execute the command
-		SqlDataReader^ reader = command->ExecuteReader();
+ 		SqlDataReader^ reader = command->ExecuteReader();
 
-		// Check if the query returned any rows
-		if (reader->Read()) {
+ 		if (reader->Read()) {
 			txt_nom->Text = reader->GetString(0);
 			
 		}
 
-		// Close the reader
-		reader->Close();
+ 		reader->Close();
 
-		// Close the connection
-		connection->Close();
+ 		connection->Close();
 	}
 	catch (Exception^ ex) {
 		MessageBox::Show("moxkil f cenection",
@@ -256,7 +243,8 @@ private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e
 	int id = Convert::ToInt64(lb->Text);
 	Adherent ad(id);
 	ad.rmv();
-	lb->SelectedIndex=lb->SelectedIndex+1;
+	afterdelete();
+	
 
 
 }

@@ -246,7 +246,7 @@ namespace AdamClub {
 
 		}
 #pragma endregion
-		public:
+	public:
 			String^ connString = "Data Source=ADAM;Initial Catalog=club;Integrated Security=True";
 
 	private: System::Void ModAdherent_Load(System::Object^ sender, System::EventArgs^ e) {
@@ -308,20 +308,15 @@ private: System::Void lb_SelectedIndexChanged(System::Object^ sender, System::Ev
 	SqlConnection^ connection = gcnew SqlConnection(connString);
 
 	try {
-		// Open the connection
 		connection->Open();
 
-		// Create a command object
 		SqlCommand^ command = connection->CreateCommand();
 		int id =Convert::ToInt64(lb->Text) ;
-		// Set the command text
 		command->CommandText = "SELECT  nom,tele,dn,da  FROM adherent WHERE Id = @id";
 		command->Parameters->AddWithValue("@id", id);
 
-		// Execute the command
 		SqlDataReader^ reader = command->ExecuteReader();
 
-		// Check if the query returned any rows
 		if (reader->Read()) {
 			txt_nom->Text = reader->GetString(0);
 			txt_tel->Text = reader->GetString(1);
@@ -329,10 +324,8 @@ private: System::Void lb_SelectedIndexChanged(System::Object^ sender, System::Ev
 			dta->Value = reader->GetDateTime(3);
 		}
 
-		// Close the reader
 		reader->Close();
 
-		// Close the connection
 		connection->Close();
 	}
 	catch (Exception^ ex) {

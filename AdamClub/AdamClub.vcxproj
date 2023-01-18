@@ -125,17 +125,23 @@
   <ItemGroup>
     <ClCompile Include="AddAdherent.cpp" />
     <ClCompile Include="AddEntraineur.cpp" />
+    <ClCompile Include="AddEquipement.cpp" />
     <ClCompile Include="Adherent.cpp" />
     <ClCompile Include="AfficherAdherent.cpp" />
     <ClCompile Include="AfficherEntraineur.cpp" />
+    <ClCompile Include="AfficherEquipement.cpp" />
     <ClCompile Include="AtherentMain.cpp" />
     <ClCompile Include="ClubMenu.cpp" />
     <ClCompile Include="Entraineur.cpp" />
     <ClCompile Include="EntraineurMain.cpp" />
+    <ClCompile Include="equipement.cpp" />
+    <ClCompile Include="EquipementMain.cpp" />
     <ClCompile Include="ModAdherent.cpp" />
     <ClCompile Include="ModEntraineur.cpp" />
+    <ClCompile Include="ModEquipement.cpp" />
     <ClCompile Include="Personne.cpp" />
     <ClCompile Include="Program.cpp" />
+    <ClCompile Include="SuppEquipement.cpp" />
     <ClCompile Include="SuprAdherent.cpp" />
     <ClCompile Include="SuprEntraineur.cpp" />
   </ItemGroup>
@@ -146,11 +152,17 @@
     <ClInclude Include="AddEntraineur.h">
       <FileType>CppForm</FileType>
     </ClInclude>
+    <ClInclude Include="AddEquipement.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
     <ClInclude Include="Adherent.h" />
     <ClInclude Include="AfficherAdherent.h">
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="AfficherEntraineur.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="AfficherEquipement.h">
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="AtherentMain.h">
@@ -163,13 +175,23 @@
     <ClInclude Include="EntraineurMain.h">
       <FileType>CppForm</FileType>
     </ClInclude>
+    <ClInclude Include="Equipement.h" />
+    <ClInclude Include="EquipementMain.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
     <ClInclude Include="ModAdherent.h">
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="ModEntraineur.h">
       <FileType>CppForm</FileType>
     </ClInclude>
+    <ClInclude Include="ModEquipement.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
     <ClInclude Include="Personne.h" />
+    <ClInclude Include="SuprEquipement.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
     <ClInclude Include="SuprAdherent.h">
       <FileType>CppForm</FileType>
     </ClInclude>
@@ -184,11 +206,17 @@
     <EmbeddedResource Include="AddEntraineur.resx">
       <DependentUpon>AddEntraineur.h</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="AddEquipement.resx">
+      <DependentUpon>AddEquipement.h</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AfficherAdherent.resx">
       <DependentUpon>AfficherAdherent.h</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AfficherEntraineur.resx">
       <DependentUpon>AfficherEntraineur.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AfficherEquipement.resx">
+      <DependentUpon>AfficherEquipement.h</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AtherentMain.resx">
       <DependentUpon>AtherentMain.h</DependentUpon>
@@ -205,11 +233,17 @@
     <EmbeddedResource Include="ModEntraineur.resx">
       <DependentUpon>ModEntraineur.h</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ModEquipement.resx">
+      <DependentUpon>ModEquipement.h</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="SuprAdherent.resx">
       <DependentUpon>SuprAdherent.h</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SuprEntraineur.resx">
       <DependentUpon>SuprEntraineur.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SuprEquipement.resx">
+      <DependentUpon>SuprEquipement.h</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
