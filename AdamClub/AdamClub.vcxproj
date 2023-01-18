@@ -132,8 +132,6 @@
     <ClCompile Include="ClubMenu.cpp" />
     <ClCompile Include="Entraineur.cpp" />
     <ClCompile Include="EntraineurMain.cpp" />
-    <ClCompile Include="EntraineurP.cpp" />
-    <ClCompile Include="EntraineurV.cpp" />
     <ClCompile Include="ModAdherent.cpp" />
     <ClCompile Include="ModEntraineur.cpp" />
     <ClCompile Include="Personne.cpp" />
@@ -165,8 +163,6 @@
     <ClInclude Include="EntraineurMain.h">
       <FileType>CppForm</FileType>
     </ClInclude>
-    <ClInclude Include="EntraineurP.h" />
-    <ClInclude Include="EntraineurV.h" />
     <ClInclude Include="ModAdherent.h">
       <FileType>CppForm</FileType>
     </ClInclude>
@@ -199,6 +195,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ClubMenu.resx">
       <DependentUpon>ClubMenu.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EntraineurMain.resx">
+      <DependentUpon>EntraineurMain.h</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ModAdherent.resx">
       <DependentUpon>ModAdherent.h</DependentUpon>

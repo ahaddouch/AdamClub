@@ -1,5 +1,6 @@
 #pragma once
 #include "AtherentMain.h"
+#include "EntraineurMain.h"
 namespace AdamClub {
 
 	using namespace System;
@@ -80,6 +81,7 @@ namespace AdamClub {
 			this->p1->Name = L"p1";
 			this->p1->Size = System::Drawing::Size(1284, 960);
 			this->p1->TabIndex = 0;
+			this->p1->Paint += gcnew System::Windows::Forms::PaintEventHandler(this, &ClubMenu::p1_Paint);
 			// 
 			// button4
 			// 
@@ -139,6 +141,7 @@ namespace AdamClub {
 			this->button2->Text = L"Entraineurs";
 			this->button2->TextAlign = System::Drawing::ContentAlignment::BottomCenter;
 			this->button2->UseVisualStyleBackColor = true;
+			this->button2->Click += gcnew System::EventHandler(this, &ClubMenu::button2_Click);
 			// 
 			// button1
 			// 
@@ -201,6 +204,14 @@ private: System::Void ClubMenu_FormClosing(System::Object^ sender, System::Windo
 		Form^ oldForm = (Form^)p1->Controls[0];
 		oldForm->Close();
 	}
+}
+private: System::Void p1_Paint(System::Object^ sender, System::Windows::Forms::PaintEventArgs^ e) {
+}
+private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e) {
+	
+	EntraineurMain^ f = gcnew EntraineurMain();
+	AfficherFenetre(f);
+
 }
 };
 }

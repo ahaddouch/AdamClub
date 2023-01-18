@@ -168,75 +168,66 @@ namespace AdamClub {
 #pragma endregion
 		public:
 			String^ connString = "Data Source=ADAM;Initial Catalog=club;Integrated Security=True";
+			void afterdelete() {
+				SqlConnection^ connection = gcnew SqlConnection(connString);
+
+				try {
+					lb->Items->Clear();
+					connection->Open();
+
+					SqlCommand^ command = connection->CreateCommand();
+
+					command->CommandText = "SELECT id FROM entraineur";
+
+					SqlDataReader^ reader = command->ExecuteReader();
+
+					lb->Items->Clear();
+
+					while (reader->Read()) {
+						lb->Items->Add(reader->GetInt32(0));
+					}
+
+					reader->Close();
+
+
+					connection->Close();
+				}
+				catch (Exception^ ex) {
+					MessageBox::Show("Échec de connection",
+						"erroooor", MessageBoxButtons::OK);
+				}
+			}
 	private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e) {
 		this->Close();
 	}
 private: System::Void SuprEntraineur_Load(System::Object^ sender, System::EventArgs^ e) {
-	SqlConnection^ connection = gcnew SqlConnection(connString);
-
-	try {
-		// Open the connection
-		connection->Open();
-
-		// Create a command object
-		SqlCommand^ command = connection->CreateCommand();
-
-		// Set the command text
-		command->CommandText = "SELECT id FROM entraineur";
-
-		// Execute the command
-		SqlDataReader^ reader = command->ExecuteReader();
-
-		// Clear the ListBox
-		lb->Items->Clear();
-
-		// Add items to the ListBox
-		while (reader->Read()) {
-			lb->Items->Add(reader->GetInt32(0));
-		}
-
-		// Close the reader
-		reader->Close();
-
-		
-		connection->Close();
-	}
-	catch (Exception^ ex) {
-		MessageBox::Show("Échec de connection",
-			"erroooor", MessageBoxButtons::OK);
-	}
+	afterdelete();
+	
 }
 private: System::Void lb_SelectedIndexChanged(System::Object^ sender, System::EventArgs^ e) {
 	txt_nom->Clear();
 
 
-	// Create a connection object
+	
 	SqlConnection^ connection = gcnew SqlConnection(connString);
 
 	try {
-		// Open the connection
 		connection->Open();
 
-		// Create a command object
 		SqlCommand^ command = connection->CreateCommand();
 		int id = Convert::ToInt64(lb->Text);
-		// Set the command text
-		command->CommandText = "SELECT  nom,tele,dn,da  FROM entraineur WHERE Id = @id";
+		command->CommandText = "SELECT  nom  FROM entraineur WHERE Id = @id";
 		command->Parameters->AddWithValue("@id", id);
 
-		// Execute the command
 		SqlDataReader^ reader = command->ExecuteReader();
 
-		// Check if the query returned any rows
 		if (reader->Read()) {
 			txt_nom->Text = reader->GetString(0);
 
 		}
 
-		// Close the reader
 		reader->Close();
 
-		// Close the connection
 		connection->Close();
 	}
 	catch (Exception^ ex) {
@@ -248,7 +239,8 @@ private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e
 	int id = Convert::ToInt64(lb->Text);
 	Entraineur En(id);
 	En.rmvE();
-	lb->SelectedIndex = lb->SelectedIndex + 1;
+	
+	afterdelete();
 
 }
 };

@@ -6,6 +6,8 @@
 #include "SuprAdherent.h"
 #include "AtherentMain.h"
 #include "ClubMenu.h"
+#include "AddEntraineur.h"
+#include "ModEntraineur.h"
 //#include <vector>
 
 

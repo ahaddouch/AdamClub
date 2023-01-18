@@ -95,6 +95,7 @@ namespace AdamClub {
 			this->panel1->Name = L"panel1";
 			this->panel1->Size = System::Drawing::Size(1300, 154);
 			this->panel1->TabIndex = 0;
+			this->panel1->Paint += gcnew System::Windows::Forms::PaintEventHandler(this, &AtherentMain::panel1_Paint);
 			// 
 			// button1
 			// 
@@ -172,6 +173,7 @@ namespace AdamClub {
 			this->p1->Name = L"p1";
 			this->p1->Size = System::Drawing::Size(1300, 647);
 			this->p1->TabIndex = 1;
+			this->p1->Paint += gcnew System::Windows::Forms::PaintEventHandler(this, &AtherentMain::p1_Paint);
 			// 
 			// AtherentMain
 			// 
@@ -245,6 +247,10 @@ private: System::Void btn_search_Click(System::Object^ sender, System::EventArgs
 }
 private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
 	this->Close();
+}
+private: System::Void p1_Paint(System::Object^ sender, System::Windows::Forms::PaintEventArgs^ e) {
+}
+private: System::Void panel1_Paint(System::Object^ sender, System::Windows::Forms::PaintEventArgs^ e) {
 }
 };
 }

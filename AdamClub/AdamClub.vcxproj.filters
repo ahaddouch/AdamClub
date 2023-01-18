@@ -39,12 +39,6 @@
     <ClCompile Include="Entraineur.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="EntraineurV.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="EntraineurP.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="Personne.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -87,12 +81,6 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Entraineur.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="EntraineurV.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="EntraineurP.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Personne.h">

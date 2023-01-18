@@ -253,34 +253,28 @@ namespace AdamClub {
 		
 
 		
-		// Create a connection object
+		
 		SqlConnection^ connection = gcnew SqlConnection(connString);
 
 		try {
-			// Open the connection
+			
 			connection->Open();
 
-			// Create a command object
+			
 			SqlCommand^ command = connection->CreateCommand();
 
-			// Set the command text
 			command->CommandText = "SELECT id FROM adherent";
 
-			// Execute the command
 			SqlDataReader^ reader = command->ExecuteReader();
 
-			// Clear the ListBox
 			lb->Items->Clear();
 
-			// Add items to the ListBox
 			while (reader->Read()) {
 				lb->Items->Add(reader->GetInt32(0));
 			}
 
-			// Close the reader
 			reader->Close();
 
-			// Close the connection
 			connection->Close();
 		}
 		catch (Exception^ ex) {
@@ -304,12 +298,13 @@ private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e
 }
 private: System::Void lb_SelectedIndexChanged(System::Object^ sender, System::EventArgs^ e) {
 
+
 	
 	////////////////////////////////////////////////////////////////////////////
 	txt_nom->Clear();
 	txt_tel->Clear();
 
-	// Create a connection object
+	
 	SqlConnection^ connection = gcnew SqlConnection(connString);
 
 	try {

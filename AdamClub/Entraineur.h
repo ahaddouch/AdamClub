@@ -32,7 +32,7 @@ public:
 		this->dn = dn;
 		this->prixH = prixH;
 		this->type = 1;
-		this->de = nullptr;
+		this->de=DateTime::Now;
 		this->salaire = 0;
 	}
 	Entraineur(int id) {
@@ -44,7 +44,7 @@ public:
 			SqlConnection sqlConn(connString);
 			sqlConn.Open();
 
-			String^ sqlQuery = "INSERT INTO entrainneur (id, nom, tele, dn, de,salaire,type,prixH) VALUES (@id, @nom, @tel, @dn, @de,@salaire,@type,@prixH);";
+			String^ sqlQuery = "INSERT INTO entraineur (id, nom, tele, dn, de,salaire,type,prixH) VALUES (@id, @nom, @tel, @dn, @de,@salaire,@type,@prixH);";
 
 			SqlCommand command(sqlQuery, % sqlConn);
 			command.Parameters->AddWithValue("@id", id);
@@ -81,14 +81,14 @@ public:
 			SqlCommand^ command = connection->CreateCommand();
 
 
-			command->CommandText = "UPDATE adherent SET nom = @nom , tele=@tel , dn = @dn ,de=@de , salaire=@salaire ,type=@type,prixH=@prixH WHERE Id = @id";
+			command->CommandText = "UPDATE entraineur SET nom = @nom , tele=@tel , dn = @dn ,de=@de , salaire=@salaire ,type=@type,prixH=@prixH WHERE Id = @id";
 
 			command->Parameters->AddWithValue("@id", id);
 			command->Parameters->AddWithValue("@nom", nom);
 			command->Parameters->AddWithValue("@tel", tel);
 			command->Parameters->AddWithValue("@dn", dn);
 			command->Parameters->AddWithValue("@de", de);
-			command->Parameters->AddWithValue("@salair", salaire);
+			command->Parameters->AddWithValue("@salaire", salaire);
 			command->Parameters->AddWithValue("@type", type);
 			command->Parameters->AddWithValue("@prixH", prixH);
 			command->ExecuteNonQuery();
@@ -96,12 +96,12 @@ public:
 			
 			connection->Close();
 
-			MessageBox::Show(" demodifier  adhérent avec secces",
-				"Échec de modifier", MessageBoxButtons::OK);
+			MessageBox::Show(" demodifier  entraineur avec secces",
+				" secces !!!!!", MessageBoxButtons::OK);
 		}
 		catch (Exception^ ex) {
 
-			MessageBox::Show("Échec de modifier  l'adhérent",
+			MessageBox::Show("Échec de modifier  l'entraineur",
 				"Échec de modifier", MessageBoxButtons::OK);
 		}
 	}
