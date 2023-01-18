@@ -7,8 +7,8 @@ using namespace std;
 using namespace System::Data::SqlClient;
 using namespace System::Windows::Forms;
 using namespace System::Data;
-ref class EntraineurV :
-    public Entraineur
+ref class EntraineurV 
+   
 {
 
 

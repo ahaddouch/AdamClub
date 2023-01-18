@@ -182,6 +182,7 @@ namespace AdamClub {
 			this->ClientSize = System::Drawing::Size(1300, 805);
 			this->Controls->Add(this->p1);
 			this->Controls->Add(this->panel1);
+			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::None;
 			this->Margin = System::Windows::Forms::Padding(2);
 			this->Name = L"AtherentMain";
 			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;

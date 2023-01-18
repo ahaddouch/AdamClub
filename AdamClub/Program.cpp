@@ -5,6 +5,7 @@
 #include "AfficherAdherent.h"
 #include "SuprAdherent.h"
 #include "AtherentMain.h"
+#include "ClubMenu.h"
 //#include <vector>
 
 
@@ -19,10 +20,10 @@ void main()
 	//AdamClub::AddAdherent f;
 	//f.ShowDialog();
 
-	//AdamClub::AfficherAdherent aff;
-	//f.ShowDialog();
-	AdamClub::AtherentMain f;
+	AdamClub::ClubMenu f;
 	f.ShowDialog();
+	//AdamClub::AtherentMain f;
+	//f.ShowDialog();
 	
 	Adherent ad (87, "jggf", "gjgukh", DateTime::Now, DateTime::Now);
 	//Adherent^ adg = gcnew Adherent();

@@ -1,5 +1,6 @@
 #pragma once
-#include "Adherent.h"
+#include "Entraineur.h"
+
 namespace AdamClub {
 
 	using namespace System;
@@ -7,17 +8,16 @@ namespace AdamClub {
 	using namespace System::Collections;
 	using namespace System::Windows::Forms;
 	using namespace System::Data;
-	using namespace System::Drawing;
 	using namespace System::Data::SqlClient;
-
+	using namespace System::Drawing;
 
 	/// <summary>
-	/// Summary for SuprAdherent
+	/// Summary for SuprEntraineur
 	/// </summary>
-	public ref class SuprAdherent : public System::Windows::Forms::Form
+	public ref class SuprEntraineur : public System::Windows::Forms::Form
 	{
 	public:
-		SuprAdherent(void)
+		SuprEntraineur(void)
 		{
 			InitializeComponent();
 			//
@@ -29,16 +29,15 @@ namespace AdamClub {
 		/// <summary>
 		/// Clean up any resources being used.
 		/// </summary>
-		~SuprAdherent()
+		~SuprEntraineur()
 		{
 			if (components)
 			{
 				delete components;
 			}
 		}
-	private: System::Windows::Forms::ListBox^ lb;
-	protected:
 
+	protected:
 
 	private: System::Windows::Forms::Button^ button2;
 	private: System::Windows::Forms::Button^ button1;
@@ -47,8 +46,10 @@ namespace AdamClub {
 
 
 
+
 	private: System::Windows::Forms::Label^ label2;
 	private: System::Windows::Forms::Label^ label1;
+	private: System::Windows::Forms::ListBox^ lb;
 
 	private:
 		/// <summary>
@@ -63,61 +64,48 @@ namespace AdamClub {
 		/// </summary>
 		void InitializeComponent(void)
 		{
-			System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(SuprAdherent::typeid));
-			this->lb = (gcnew System::Windows::Forms::ListBox());
 			this->button2 = (gcnew System::Windows::Forms::Button());
 			this->button1 = (gcnew System::Windows::Forms::Button());
 			this->txt_nom = (gcnew System::Windows::Forms::TextBox());
 			this->label2 = (gcnew System::Windows::Forms::Label());
 			this->label1 = (gcnew System::Windows::Forms::Label());
+			this->lb = (gcnew System::Windows::Forms::ListBox());
 			this->SuspendLayout();
-			// 
-			// lb
-			// 
-			this->lb->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 20));
-			this->lb->FormattingEnabled = true;
-			this->lb->ItemHeight = 31;
-			this->lb->Location = System::Drawing::Point(565, 137);
-			this->lb->Margin = System::Windows::Forms::Padding(2);
-			this->lb->Name = L"lb";
-			this->lb->Size = System::Drawing::Size(220, 159);
-			this->lb->TabIndex = 54;
-			this->lb->SelectedIndexChanged += gcnew System::EventHandler(this, &SuprAdherent::lb_SelectedIndexChanged);
 			// 
 			// button2
 			// 
-			this->button2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 16));
+			this->button2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 20));
 			this->button2->ImeMode = System::Windows::Forms::ImeMode::NoControl;
-			this->button2->Location = System::Drawing::Point(1082, 518);
+			this->button2->Location = System::Drawing::Point(1047, 512);
 			this->button2->Margin = System::Windows::Forms::Padding(2);
 			this->button2->Name = L"button2";
-			this->button2->Size = System::Drawing::Size(145, 56);
+			this->button2->Size = System::Drawing::Size(167, 51);
 			this->button2->TabIndex = 50;
 			this->button2->Text = L"Cancel";
 			this->button2->UseVisualStyleBackColor = true;
-			this->button2->Click += gcnew System::EventHandler(this, &SuprAdherent::button2_Click);
+			this->button2->Click += gcnew System::EventHandler(this, &SuprEntraineur::button2_Click);
 			// 
 			// button1
 			// 
-			this->button1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 16));
+			this->button1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 20));
 			this->button1->ImeMode = System::Windows::Forms::ImeMode::NoControl;
-			this->button1->Location = System::Drawing::Point(912, 518);
+			this->button1->Location = System::Drawing::Point(860, 512);
 			this->button1->Margin = System::Windows::Forms::Padding(2);
 			this->button1->Name = L"button1";
-			this->button1->Size = System::Drawing::Size(127, 56);
+			this->button1->Size = System::Drawing::Size(167, 51);
 			this->button1->TabIndex = 51;
 			this->button1->Text = L"Supprimer";
 			this->button1->UseVisualStyleBackColor = true;
-			this->button1->Click += gcnew System::EventHandler(this, &SuprAdherent::button1_Click);
+			this->button1->Click += gcnew System::EventHandler(this, &SuprEntraineur::button1_Click);
 			// 
 			// txt_nom
 			// 
 			this->txt_nom->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 20));
-			this->txt_nom->Location = System::Drawing::Point(565, 306);
+			this->txt_nom->Location = System::Drawing::Point(615, 308);
 			this->txt_nom->Margin = System::Windows::Forms::Padding(2);
 			this->txt_nom->Name = L"txt_nom";
-			this->txt_nom->Size = System::Drawing::Size(220, 38);
-			this->txt_nom->TabIndex = 49;
+			this->txt_nom->Size = System::Drawing::Size(250, 38);
+			this->txt_nom->TabIndex = 48;
 			// 
 			// label2
 			// 
@@ -125,11 +113,11 @@ namespace AdamClub {
 			this->label2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 20));
 			this->label2->ForeColor = System::Drawing::Color::White;
 			this->label2->ImeMode = System::Windows::Forms::ImeMode::NoControl;
-			this->label2->Location = System::Drawing::Point(353, 306);
+			this->label2->Location = System::Drawing::Point(325, 311);
 			this->label2->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->label2->Name = L"label2";
 			this->label2->Size = System::Drawing::Size(71, 31);
-			this->label2->TabIndex = 46;
+			this->label2->TabIndex = 45;
 			this->label2->Text = L"Nom";
 			// 
 			// label1
@@ -138,14 +126,25 @@ namespace AdamClub {
 			this->label1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 20));
 			this->label1->ForeColor = System::Drawing::Color::White;
 			this->label1->ImeMode = System::Windows::Forms::ImeMode::NoControl;
-			this->label1->Location = System::Drawing::Point(353, 137);
+			this->label1->Location = System::Drawing::Point(325, 131);
 			this->label1->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->label1->Name = L"label1";
 			this->label1->Size = System::Drawing::Size(42, 31);
-			this->label1->TabIndex = 47;
+			this->label1->TabIndex = 46;
 			this->label1->Text = L"ID";
 			// 
-			// SuprAdherent
+			// lb
+			// 
+			this->lb->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 20));
+			this->lb->FormattingEnabled = true;
+			this->lb->ItemHeight = 31;
+			this->lb->Location = System::Drawing::Point(615, 131);
+			this->lb->Name = L"lb";
+			this->lb->Size = System::Drawing::Size(250, 159);
+			this->lb->TabIndex = 54;
+			this->lb->SelectedIndexChanged += gcnew System::EventHandler(this, &SuprEntraineur::lb_SelectedIndexChanged);
+			// 
+			// SuprEntraineur
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
@@ -159,12 +158,9 @@ namespace AdamClub {
 			this->Controls->Add(this->label2);
 			this->Controls->Add(this->label1);
 			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::None;
-			this->Icon = (cli::safe_cast<System::Drawing::Icon^>(resources->GetObject(L"$this.Icon")));
-			this->Margin = System::Windows::Forms::Padding(2);
-			this->Name = L"SuprAdherent";
-			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
-			this->Text = L"SuprAdherent";
-			this->Load += gcnew System::EventHandler(this, &SuprAdherent::SuprAdherent_Load);
+			this->Name = L"SuprEntraineur";
+			this->Text = L"SuprEntraineur";
+			this->Load += gcnew System::EventHandler(this, &SuprEntraineur::SuprEntraineur_Load);
 			this->ResumeLayout(false);
 			this->PerformLayout();
 
@@ -172,47 +168,47 @@ namespace AdamClub {
 #pragma endregion
 		public:
 			String^ connString = "Data Source=ADAM;Initial Catalog=club;Integrated Security=True";
-	private: System::Void SuprAdherent_Load(System::Object^ sender, System::EventArgs^ e) {
-		// Create a connection object
-		SqlConnection^ connection = gcnew SqlConnection(connString);
-
-		try {
-			// Open the connection
-			connection->Open();
-
-			// Create a command object
-			SqlCommand^ command = connection->CreateCommand();
-
-			// Set the command text
-			command->CommandText = "SELECT id FROM adherent";
-
-			// Execute the command
-			SqlDataReader^ reader = command->ExecuteReader();
-
-			// Clear the ListBox
-			lb->Items->Clear();
-
-			// Add items to the ListBox
-			while (reader->Read()) {
-				lb->Items->Add(reader->GetInt32(0));
-			}
-
-			// Close the reader
-			reader->Close();
-
-			// Close the connection
-			connection->Close();
-		}
-		catch (Exception^ ex) {
-			MessageBox::Show("Échec de connection",
-				"erroooor", MessageBoxButtons::OK);
-		}
+	private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e) {
+		this->Close();
 	}
-private: System::Void lb_SelectedIndexChanged(System::Object^ sender, System::EventArgs^ e) {
+private: System::Void SuprEntraineur_Load(System::Object^ sender, System::EventArgs^ e) {
+	SqlConnection^ connection = gcnew SqlConnection(connString);
 
-	////////////////////////////////////////////////////////////////////////////
+	try {
+		// Open the connection
+		connection->Open();
+
+		// Create a command object
+		SqlCommand^ command = connection->CreateCommand();
+
+		// Set the command text
+		command->CommandText = "SELECT id FROM entraineur";
+
+		// Execute the command
+		SqlDataReader^ reader = command->ExecuteReader();
+
+		// Clear the ListBox
+		lb->Items->Clear();
+
+		// Add items to the ListBox
+		while (reader->Read()) {
+			lb->Items->Add(reader->GetInt32(0));
+		}
+
+		// Close the reader
+		reader->Close();
+
+		
+		connection->Close();
+	}
+	catch (Exception^ ex) {
+		MessageBox::Show("Échec de connection",
+			"erroooor", MessageBoxButtons::OK);
+	}
+}
+private: System::Void lb_SelectedIndexChanged(System::Object^ sender, System::EventArgs^ e) {
 	txt_nom->Clear();
-	
+
 
 	// Create a connection object
 	SqlConnection^ connection = gcnew SqlConnection(connString);
@@ -225,7 +221,7 @@ private: System::Void lb_SelectedIndexChanged(System::Object^ sender, System::Ev
 		SqlCommand^ command = connection->CreateCommand();
 		int id = Convert::ToInt64(lb->Text);
 		// Set the command text
-		command->CommandText = "SELECT  nom,tele,dn,da  FROM adherent WHERE Id = @id";
+		command->CommandText = "SELECT  nom,tele,dn,da  FROM entraineur WHERE Id = @id";
 		command->Parameters->AddWithValue("@id", id);
 
 		// Execute the command
@@ -234,7 +230,7 @@ private: System::Void lb_SelectedIndexChanged(System::Object^ sender, System::Ev
 		// Check if the query returned any rows
 		if (reader->Read()) {
 			txt_nom->Text = reader->GetString(0);
-			
+
 		}
 
 		// Close the reader
@@ -248,16 +244,11 @@ private: System::Void lb_SelectedIndexChanged(System::Object^ sender, System::Ev
 			"erroooor", MessageBoxButtons::OK);
 	}
 }
-private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e) {
-	this->Close();
-}
 private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
-
 	int id = Convert::ToInt64(lb->Text);
-	Adherent ad(id);
-	ad.rmv();
-	lb->SelectedIndex=lb->SelectedIndex+1;
-
+	Entraineur En(id);
+	En.rmvE();
+	lb->SelectedIndex = lb->SelectedIndex + 1;
 
 }
 };

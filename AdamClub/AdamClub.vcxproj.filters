@@ -48,6 +48,24 @@
     <ClCompile Include="Personne.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="AddEntraineur.cpp">
+      <Filter>Header Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ModEntraineur.cpp">
+      <Filter>Header Files</Filter>
+    </ClCompile>
+    <ClCompile Include="SuprEntraineur.cpp">
+      <Filter>Header Files</Filter>
+    </ClCompile>
+    <ClCompile Include="AfficherEntraineur.cpp">
+      <Filter>Header Files</Filter>
+    </ClCompile>
+    <ClCompile Include="EntraineurMain.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ClubMenu.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="AddAdherent.h">
@@ -78,6 +96,24 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Personne.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="AddEntraineur.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ModEntraineur.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="SuprEntraineur.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="AfficherEntraineur.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="EntraineurMain.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ClubMenu.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
