@@ -46,6 +46,11 @@ namespace AdamClub {
 	private: System::Windows::Forms::Label^ label1;
 	private: System::Windows::Forms::DateTimePicker^ dta;
 	private: System::Windows::Forms::Label^ label5;
+	private: System::Windows::Forms::Label^ label3;
+
+	private: System::Windows::Forms::ComboBox^ txt_salle;
+
+
 
 	private:
 		/// <summary>
@@ -68,6 +73,8 @@ namespace AdamClub {
 			this->label1 = (gcnew System::Windows::Forms::Label());
 			this->dta = (gcnew System::Windows::Forms::DateTimePicker());
 			this->label5 = (gcnew System::Windows::Forms::Label());
+			this->label3 = (gcnew System::Windows::Forms::Label());
+			this->txt_salle = (gcnew System::Windows::Forms::ComboBox());
 			this->SuspendLayout();
 			// 
 			// lb
@@ -163,6 +170,32 @@ namespace AdamClub {
 			this->label5->TabIndex = 61;
 			this->label5->Text = L"Date d\'achter";
 			// 
+			// label3
+			// 
+			this->label3->AutoSize = true;
+			this->label3->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 20));
+			this->label3->ForeColor = System::Drawing::Color::White;
+			this->label3->ImeMode = System::Windows::Forms::ImeMode::NoControl;
+			this->label3->Location = System::Drawing::Point(289, 389);
+			this->label3->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
+			this->label3->Name = L"label3";
+			this->label3->Size = System::Drawing::Size(74, 31);
+			this->label3->TabIndex = 55;
+			this->label3->Text = L"Salle";
+			// 
+			// txt_salle
+			// 
+			this->txt_salle->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 20.25F));
+			this->txt_salle->FormattingEnabled = true;
+			this->txt_salle->Items->AddRange(gcnew cli::array< System::Object^  >(12) {
+				L"1", L"2", L"3", L"4", L"5", L"6", L"7", L"8",
+					L"9", L"10", L"11", L"12"
+			});
+			this->txt_salle->Location = System::Drawing::Point(603, 381);
+			this->txt_salle->Name = L"txt_salle";
+			this->txt_salle->Size = System::Drawing::Size(250, 39);
+			this->txt_salle->TabIndex = 63;
+			// 
 			// ModEquipement
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
@@ -170,11 +203,13 @@ namespace AdamClub {
 			this->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(13)), static_cast<System::Int32>(static_cast<System::Byte>(27)),
 				static_cast<System::Int32>(static_cast<System::Byte>(48)));
 			this->ClientSize = System::Drawing::Size(1284, 608);
+			this->Controls->Add(this->txt_salle);
 			this->Controls->Add(this->dta);
 			this->Controls->Add(this->label5);
 			this->Controls->Add(this->lb);
 			this->Controls->Add(this->button2);
 			this->Controls->Add(this->button1);
+			this->Controls->Add(this->label3);
 			this->Controls->Add(this->txt_nom);
 			this->Controls->Add(this->label2);
 			this->Controls->Add(this->label1);
@@ -196,9 +231,9 @@ namespace AdamClub {
 private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
 	int id = Convert::ToInt64(lb->Text);
 	String^ nom = txt_nom->Text->ToString();
-	
+	int sal = Convert::ToInt32(txt_salle->Text);
 	DateTime^ da = dta->Value;
-	Equipement ad(id, nom, da);
+	Equipement ad(id, nom, da,sal);
 	ad.UpdateEquipement();
 
 
@@ -245,7 +280,7 @@ private: System::Void lb_SelectedIndexChanged(System::Object^ sender, System::Ev
 
 		SqlCommand^ command = connection->CreateCommand();
 		int id = Convert::ToInt64(lb->Text);
-		command->CommandText = "SELECT  nom,da  FROM equipement WHERE Id = @id";
+		command->CommandText = "SELECT  nom,da ,salle FROM equipement WHERE Id = @id";
 		command->Parameters->AddWithValue("@id", id);
 
 		SqlDataReader^ reader = command->ExecuteReader();
@@ -254,6 +289,7 @@ private: System::Void lb_SelectedIndexChanged(System::Object^ sender, System::Ev
 			txt_nom->Text = reader->GetString(0);
 			
 			dta->Value = reader->GetDateTime(1);
+			txt_salle->Text = Convert::ToString(reader->GetInt32(2));
 		}
 
 		reader->Close();

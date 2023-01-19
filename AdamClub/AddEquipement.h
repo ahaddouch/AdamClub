@@ -45,6 +45,9 @@ namespace AdamClub {
 	private: System::Windows::Forms::DateTimePicker^ dta;
 	private: System::Windows::Forms::Label^ label5;
 
+	private: System::Windows::Forms::Label^ label3;
+	private: System::Windows::Forms::ComboBox^ txt_salle;
+
 	private:
 		/// <summary>
 		/// Required designer variable.
@@ -66,6 +69,8 @@ namespace AdamClub {
 			this->label1 = (gcnew System::Windows::Forms::Label());
 			this->dta = (gcnew System::Windows::Forms::DateTimePicker());
 			this->label5 = (gcnew System::Windows::Forms::Label());
+			this->label3 = (gcnew System::Windows::Forms::Label());
+			this->txt_salle = (gcnew System::Windows::Forms::ComboBox());
 			this->SuspendLayout();
 			// 
 			// button2
@@ -163,6 +168,32 @@ namespace AdamClub {
 			this->label5->Text = L"Date d\'achter";
 			this->label5->Click += gcnew System::EventHandler(this, &AddEquipement::label5_Click);
 			// 
+			// label3
+			// 
+			this->label3->AutoSize = true;
+			this->label3->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 20));
+			this->label3->ForeColor = System::Drawing::Color::White;
+			this->label3->ImeMode = System::Windows::Forms::ImeMode::NoControl;
+			this->label3->Location = System::Drawing::Point(335, 329);
+			this->label3->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
+			this->label3->Name = L"label3";
+			this->label3->Size = System::Drawing::Size(74, 31);
+			this->label3->TabIndex = 58;
+			this->label3->Text = L"Salle";
+			// 
+			// txt_salle
+			// 
+			this->txt_salle->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 20.25F));
+			this->txt_salle->FormattingEnabled = true;
+			this->txt_salle->Items->AddRange(gcnew cli::array< System::Object^  >(12) {
+				L"1", L"2", L"3", L"4", L"5", L"6", L"7", L"8",
+					L"9", L"10", L"11", L"12"
+			});
+			this->txt_salle->Location = System::Drawing::Point(628, 326);
+			this->txt_salle->Name = L"txt_salle";
+			this->txt_salle->Size = System::Drawing::Size(250, 39);
+			this->txt_salle->TabIndex = 64;
+			// 
 			// AddEquipement
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
@@ -170,6 +201,8 @@ namespace AdamClub {
 			this->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(13)), static_cast<System::Int32>(static_cast<System::Byte>(27)),
 				static_cast<System::Int32>(static_cast<System::Byte>(48)));
 			this->ClientSize = System::Drawing::Size(1284, 608);
+			this->Controls->Add(this->txt_salle);
+			this->Controls->Add(this->label3);
 			this->Controls->Add(this->dta);
 			this->Controls->Add(this->label5);
 			this->Controls->Add(this->button2);
@@ -202,13 +235,14 @@ private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e
 		String^ nom = txt_nom->Text->ToString();
 
 		DateTime^ da = dta->Value;
-
-		Equipement eq(id, nom, da);
+		int sal = Convert::ToInt32(txt_salle->Text);
+		Equipement eq(id, nom, da,sal);
 		eq.uploadEquipement();
 		txt_id->Clear();
 		txt_nom->Clear();
 
 		dta->Value = DateTime::Now;
+		txt_salle->SelectedValue = -1;
 	}
 	catch (Exception^ ex)
 	{

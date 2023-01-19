@@ -6,6 +6,7 @@
 #include "AfficherAdherent.h"
 #include "SuprAdherent.h"
 #include "AtherentMain.h"
+#include "AdherentToEquipe.h"
 
 namespace AdamClub {
 
@@ -57,6 +58,7 @@ namespace AdamClub {
 	private: System::Windows::Forms::FlowLayoutPanel^ p1;
 	private: System::Windows::Forms::Button^ button1;
 	private: System::Windows::Forms::Button^ button5;
+	private: System::Windows::Forms::Button^ button2;
 
 
 	private:
@@ -76,6 +78,7 @@ namespace AdamClub {
 			this->panel1 = (gcnew System::Windows::Forms::Panel());
 			this->button5 = (gcnew System::Windows::Forms::Button());
 			this->button1 = (gcnew System::Windows::Forms::Button());
+			this->button2 = (gcnew System::Windows::Forms::Button());
 			this->btn_search = (gcnew System::Windows::Forms::Button());
 			this->btn_supp = (gcnew System::Windows::Forms::Button());
 			this->btn_mod = (gcnew System::Windows::Forms::Button());
@@ -88,6 +91,7 @@ namespace AdamClub {
 			// 
 			this->panel1->Controls->Add(this->button5);
 			this->panel1->Controls->Add(this->button1);
+			this->panel1->Controls->Add(this->button2);
 			this->panel1->Controls->Add(this->btn_search);
 			this->panel1->Controls->Add(this->btn_supp);
 			this->panel1->Controls->Add(this->btn_mod);
@@ -130,11 +134,24 @@ namespace AdamClub {
 			this->button1->UseVisualStyleBackColor = false;
 			this->button1->Click += gcnew System::EventHandler(this, &AtherentMain::button1_Click);
 			// 
+			// button2
+			// 
+			this->button2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 15.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->button2->Location = System::Drawing::Point(855, 24);
+			this->button2->Margin = System::Windows::Forms::Padding(2);
+			this->button2->Name = L"button2";
+			this->button2->Size = System::Drawing::Size(130, 102);
+			this->button2->TabIndex = 0;
+			this->button2->Text = L"Affecte \r\nun equipe\r\n";
+			this->button2->UseVisualStyleBackColor = true;
+			this->button2->Click += gcnew System::EventHandler(this, &AtherentMain::button2_Click);
+			// 
 			// btn_search
 			// 
 			this->btn_search->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 15.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->btn_search->Location = System::Drawing::Point(786, 26);
+			this->btn_search->Location = System::Drawing::Point(721, 24);
 			this->btn_search->Margin = System::Windows::Forms::Padding(2);
 			this->btn_search->Name = L"btn_search";
 			this->btn_search->Size = System::Drawing::Size(130, 102);
@@ -147,7 +164,7 @@ namespace AdamClub {
 			// 
 			this->btn_supp->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 15.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->btn_supp->Location = System::Drawing::Point(652, 26);
+			this->btn_supp->Location = System::Drawing::Point(587, 24);
 			this->btn_supp->Margin = System::Windows::Forms::Padding(2);
 			this->btn_supp->Name = L"btn_supp";
 			this->btn_supp->Size = System::Drawing::Size(130, 102);
@@ -160,7 +177,7 @@ namespace AdamClub {
 			// 
 			this->btn_mod->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 15.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->btn_mod->Location = System::Drawing::Point(518, 26);
+			this->btn_mod->Location = System::Drawing::Point(453, 24);
 			this->btn_mod->Margin = System::Windows::Forms::Padding(2);
 			this->btn_mod->Name = L"btn_mod";
 			this->btn_mod->Size = System::Drawing::Size(130, 102);
@@ -173,7 +190,7 @@ namespace AdamClub {
 			// 
 			this->btn_add->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 15.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->btn_add->Location = System::Drawing::Point(384, 26);
+			this->btn_add->Location = System::Drawing::Point(319, 24);
 			this->btn_add->Margin = System::Windows::Forms::Padding(2);
 			this->btn_add->Name = L"btn_add";
 			this->btn_add->Size = System::Drawing::Size(130, 102);
@@ -272,6 +289,11 @@ private: System::Void p1_Paint(System::Object^ sender, System::Windows::Forms::P
 private: System::Void panel1_Paint(System::Object^ sender, System::Windows::Forms::PaintEventArgs^ e) {
 }
 private: System::Void button5_Click(System::Object^ sender, System::EventArgs^ e) {
+
+}
+private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e) {
+	AdherentToEquipe^ f = gcnew AdherentToEquipe();
+	AfficherFenetre(f);
 
 }
 };

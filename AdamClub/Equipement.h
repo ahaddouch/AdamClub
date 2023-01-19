@@ -11,11 +11,13 @@ private:
 	int id;
 	String^ nom;
 	DateTime^ da;
+	int salle;
 public:
-	Equipement(int id, String^ nom,DateTime^ da) {
+	Equipement(int id, String^ nom,DateTime^ da,int salle) {
 		this->id = id;
 		this->nom = nom;
 		this->da = da;
+		this->salle = salle;
 		
 	}
 	Equipement(int id) {
@@ -28,13 +30,14 @@ public:
 			SqlConnection sqlConn(connString);
 			sqlConn.Open();
 
-			String^ sqlQuery = "INSERT INTO equipement  VALUES (@id, @nom, @da);";
+			String^ sqlQuery = "INSERT INTO equipement  VALUES (@id, @nom, @da,@salle);";
 
 			SqlCommand command(sqlQuery, % sqlConn);
 			command.Parameters->AddWithValue("@id", id);
 			command.Parameters->AddWithValue("@nom", nom);
 			
 			command.Parameters->AddWithValue("@da", da);
+			command.Parameters->AddWithValue("@salle", salle);
 
 			command.ExecuteNonQuery();
 
@@ -61,12 +64,13 @@ public:
 
 			SqlCommand^ command = connection->CreateCommand();
 
-			command->CommandText = "UPDATE equipement SET nom = @nom , da=@da WHERE Id = @id";
+			command->CommandText = "UPDATE equipement SET nom = @nom , da=@da ,salle=@salle WHERE Id = @id";
 
 			command->Parameters->AddWithValue("@id", id);
 			command->Parameters->AddWithValue("@nom", nom);
 			
 			command->Parameters->AddWithValue("@da", da);
+			command->Parameters->AddWithValue("@salle", salle);
 
 			command->ExecuteNonQuery();
 

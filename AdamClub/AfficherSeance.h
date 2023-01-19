@@ -131,7 +131,7 @@ namespace AdamClub {
 
 			SqlCommand^ command = connection->CreateCommand();
 
-			command->CommandText = "SELECT * FROM seance where nom like '%" + txt_find->Text->ToString() + "%'";
+			command->CommandText = "SELECT * FROM seance where id = " + txt_find->Text->ToString() + "";
 
 			SqlDataAdapter^ dataAdapter1 = gcnew SqlDataAdapter(command);
 
