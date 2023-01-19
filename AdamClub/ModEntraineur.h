@@ -424,24 +424,32 @@ namespace AdamClub {
 	}
 
 private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
-
-	int id = Convert::ToInt64(lb->Text);
-	String^ nom = txt_nom->Text->ToString();
-	String^ tel = txt_tel->Text->ToString();
-	DateTime^ dn = dtn->Value;
-	float salaire = Convert::ToDouble(txt_salaire->Text);
-	DateTime^ de = dte->Value;
-	if (rbp->Checked) {
-		Entraineur en(id, nom, tel, dn, de, salaire);
-		en.UpdateE();
-
-	}
-	else
+	try
 	{
-		Entraineur en(id, nom, tel, dn, salaire);
-		en.UpdateE();
+		int id = Convert::ToInt64(lb->Text);
+		String^ nom = txt_nom->Text->ToString();
+		String^ tel = txt_tel->Text->ToString();
+		DateTime^ dn = dtn->Value;
+		float salaire = Convert::ToDouble(txt_salaire->Text);
+		DateTime^ de = dte->Value;
+		if (rbp->Checked) {
+			Entraineur en(id, nom, tel, dn, de, salaire);
+			en.UpdateE();
 
+		}
+		else
+		{
+			Entraineur en(id, nom, tel, dn, salaire);
+			en.UpdateE();
+
+		}
 	}
+	catch (Exception^ ex)
+	{
+		MessageBox::Show("moxkil f cenection",
+			"erroooor", MessageBoxButtons::OK);
+	}
+	
 	
 	
 }

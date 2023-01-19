@@ -294,7 +294,7 @@ private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e
 	DateTime^ dn = dtn->Value;
 	DateTime^ da = dta->Value;
 	int x=5;
-	Adherent ad(id, nom, tel, dn, da,x);
+	Adherent ad(id, nom, tel, dn, da);
 	ad.Update();
 }
 private: System::Void lb_SelectedIndexChanged(System::Object^ sender, System::EventArgs^ e) {

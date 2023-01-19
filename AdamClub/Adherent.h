@@ -13,17 +13,15 @@ ref class Adherent:public Personne
 private:
 	
 	DateTime^ da;
-	int idequipe;
 
 public:
 	
-	Adherent(int id, String^ nom, String^ tel, DateTime^ dn, DateTime^ da,int  idequipe) {
+	Adherent(int id, String^ nom, String^ tel, DateTime^ dn, DateTime^ da) {
 		this->id = id;
 		this->nom = nom;
 		this->tel =tel;
 		this->dn = dn;
 		this->da = da;
-		this->idequipe = idequipe;
 	}
 	Adherent(int id) {
 		this->id = id;
@@ -38,7 +36,7 @@ public:
 			SqlConnection sqlConn(connString);
 			sqlConn.Open();
 
-			String^ sqlQuery = "INSERT INTO adherent  VALUES (@id, @nom, @tel, @dn, @da,@idequipe);";
+			String^ sqlQuery = "INSERT INTO adherent  VALUES (@id, @nom, @tel, @dn, @da);";
 
 			SqlCommand command(sqlQuery, % sqlConn);
 			command.Parameters->AddWithValue("@id", id);
@@ -46,7 +44,6 @@ public:
 			command.Parameters->AddWithValue("@tel", tel);
 			command.Parameters->AddWithValue("@dn", dn);
 			command.Parameters->AddWithValue("@da", da);
-			command.Parameters->AddWithValue("@idequipe", idequipe);
 
 			command.ExecuteNonQuery();
 
@@ -73,14 +70,13 @@ public:
 
  			SqlCommand^ command = connection->CreateCommand();
 
- 			command->CommandText = "UPDATE adherent SET nom = @nom , tele=@tel , dn = @dn ,da=@da,idequipe=@idequipe WHERE Id = @id";
+ 			command->CommandText = "UPDATE adherent SET nom = @nom , tele=@tel , dn = @dn ,da=@da WHERE Id = @id";
 
  			command->Parameters->AddWithValue("@id", id);
 			command->Parameters->AddWithValue("@nom", nom);
 			command->Parameters->AddWithValue("@tel", tel);
 			command->Parameters->AddWithValue("@dn", dn);
 			command->Parameters->AddWithValue("@da", da);
-			command->Parameters->AddWithValue("@idequipe", idequipe);
  			command->ExecuteNonQuery();
 
  			connection->Close();

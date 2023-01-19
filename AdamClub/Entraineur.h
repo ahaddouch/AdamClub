@@ -38,6 +38,10 @@ public:
 	Entraineur(int id) {
 		this->id = id;
 	}
+	Entraineur(int id,String^ nom) {
+		this->id = id;
+		this->nom = nom;
+	}
 	void uploadE() {
 		try {
 

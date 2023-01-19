@@ -106,6 +106,7 @@ namespace AdamClub {
 			this->txt_nom->Name = L"txt_nom";
 			this->txt_nom->Size = System::Drawing::Size(250, 38);
 			this->txt_nom->TabIndex = 48;
+			this->txt_nom->TextChanged += gcnew System::EventHandler(this, &SuprEntraineur::txt_nom_TextChanged);
 			// 
 			// label2
 			// 
@@ -119,6 +120,7 @@ namespace AdamClub {
 			this->label2->Size = System::Drawing::Size(71, 31);
 			this->label2->TabIndex = 45;
 			this->label2->Text = L"Nom";
+			this->label2->Click += gcnew System::EventHandler(this, &SuprEntraineur::label2_Click);
 			// 
 			// label1
 			// 
@@ -132,6 +134,7 @@ namespace AdamClub {
 			this->label1->Size = System::Drawing::Size(42, 31);
 			this->label1->TabIndex = 46;
 			this->label1->Text = L"ID";
+			this->label1->Click += gcnew System::EventHandler(this, &SuprEntraineur::label1_Click);
 			// 
 			// lb
 			// 
@@ -243,6 +246,12 @@ private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e
 	
 	afterdelete();
 
+}
+private: System::Void txt_nom_TextChanged(System::Object^ sender, System::EventArgs^ e) {
+}
+private: System::Void label2_Click(System::Object^ sender, System::EventArgs^ e) {
+}
+private: System::Void label1_Click(System::Object^ sender, System::EventArgs^ e) {
 }
 };
 }

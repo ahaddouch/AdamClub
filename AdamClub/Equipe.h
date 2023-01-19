@@ -24,6 +24,10 @@ public:
 	Equipe(int id) {
 		this->id = id;
 	}
+	Equipe(int id,String^ nom) {
+		this->id = id;
+		this->nom = nom;
+	}
 
 
 	

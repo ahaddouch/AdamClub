@@ -71,7 +71,7 @@ namespace AdamClub {
 			this->lb->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 20));
 			this->lb->FormattingEnabled = true;
 			this->lb->ItemHeight = 31;
-			this->lb->Location = System::Drawing::Point(507, 94);
+			this->lb->Location = System::Drawing::Point(626, 128);
 			this->lb->Name = L"lb";
 			this->lb->Size = System::Drawing::Size(250, 128);
 			this->lb->TabIndex = 66;
@@ -81,7 +81,7 @@ namespace AdamClub {
 			// 
 			this->button2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 20));
 			this->button2->ImeMode = System::Windows::Forms::ImeMode::NoControl;
-			this->button2->Location = System::Drawing::Point(900, 463);
+			this->button2->Location = System::Drawing::Point(1019, 497);
 			this->button2->Margin = System::Windows::Forms::Padding(2);
 			this->button2->Name = L"button2";
 			this->button2->Size = System::Drawing::Size(167, 51);
@@ -94,7 +94,7 @@ namespace AdamClub {
 			// 
 			this->button1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 20));
 			this->button1->ImeMode = System::Windows::Forms::ImeMode::NoControl;
-			this->button1->Location = System::Drawing::Point(713, 463);
+			this->button1->Location = System::Drawing::Point(832, 497);
 			this->button1->Margin = System::Windows::Forms::Padding(2);
 			this->button1->Name = L"button1";
 			this->button1->Size = System::Drawing::Size(167, 51);
@@ -106,7 +106,7 @@ namespace AdamClub {
 			// txt_nom
 			// 
 			this->txt_nom->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 20));
-			this->txt_nom->Location = System::Drawing::Point(507, 240);
+			this->txt_nom->Location = System::Drawing::Point(626, 327);
 			this->txt_nom->Margin = System::Windows::Forms::Padding(2);
 			this->txt_nom->Name = L"txt_nom";
 			this->txt_nom->Size = System::Drawing::Size(250, 38);
@@ -119,7 +119,7 @@ namespace AdamClub {
 			this->label2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 20));
 			this->label2->ForeColor = System::Drawing::Color::White;
 			this->label2->ImeMode = System::Windows::Forms::ImeMode::NoControl;
-			this->label2->Location = System::Drawing::Point(217, 243);
+			this->label2->Location = System::Drawing::Point(336, 330);
 			this->label2->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->label2->Name = L"label2";
 			this->label2->Size = System::Drawing::Size(71, 31);
@@ -133,7 +133,7 @@ namespace AdamClub {
 			this->label1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 20));
 			this->label1->ForeColor = System::Drawing::Color::White;
 			this->label1->ImeMode = System::Windows::Forms::ImeMode::NoControl;
-			this->label1->Location = System::Drawing::Point(217, 118);
+			this->label1->Location = System::Drawing::Point(336, 152);
 			this->label1->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->label1->Name = L"label1";
 			this->label1->Size = System::Drawing::Size(42, 31);
@@ -157,6 +157,7 @@ namespace AdamClub {
 			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::None;
 			this->Name = L"SuprSport";
 			this->Text = L"SuprSport";
+			this->Load += gcnew System::EventHandler(this, &SuprSport::SuprSport_Load);
 			this->ResumeLayout(false);
 			this->PerformLayout();
 
@@ -241,5 +242,8 @@ private: System::Void label2_Click(System::Object^ sender, System::EventArgs^ e)
 	}
 private: System::Void label1_Click(System::Object^ sender, System::EventArgs^ e) {
 	}
+private: System::Void SuprSport_Load(System::Object^ sender, System::EventArgs^ e) {
+	afterdelete();
+}
 };
 }

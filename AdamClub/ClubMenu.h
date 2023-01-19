@@ -162,7 +162,7 @@ namespace AdamClub {
 			this->button3->Text = L"Equipes";
 			this->button3->TextAlign = System::Drawing::ContentAlignment::BottomCenter;
 			this->button3->UseVisualStyleBackColor = true;
-			this->button3->Click += gcnew System::EventHandler(this, &ClubMenu::button3_Click);
+			this->button3->Click += gcnew System::EventHandler(this, &ClubMenu::button3_Click_1);
 			// 
 			// button2
 			// 
@@ -282,6 +282,10 @@ private: System::Void button4_Click(System::Object^ sender, System::EventArgs^ e
 private: System::Void button6_Click(System::Object^ sender, System::EventArgs^ e) {
 
 	SportMain^ f = gcnew SportMain();
+	AfficherFenetre(f);
+}
+private: System::Void button3_Click_1(System::Object^ sender, System::EventArgs^ e) {
+	EquipeMain^ f = gcnew EquipeMain();
 	AfficherFenetre(f);
 }
 };

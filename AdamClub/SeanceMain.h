@@ -110,6 +110,7 @@ namespace AdamClub {
 			this->button1->Size = System::Drawing::Size(96, 92);
 			this->button1->TabIndex = 1;
 			this->button1->UseVisualStyleBackColor = false;
+			this->button1->Click += gcnew System::EventHandler(this, &SeanceMain::button1_Click);
 			// 
 			// btn_search
 			// 
@@ -219,6 +220,9 @@ private: System::Void btn_add_Click(System::Object^ sender, System::EventArgs^ e
 private: System::Void btn_mod_Click(System::Object^ sender, System::EventArgs^ e) {
 	ModSeance^ f = gcnew ModSeance();
 	AfficherFenetre(f);
+}
+private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
+	this->Close();
 }
 };
 }

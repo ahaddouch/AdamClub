@@ -80,7 +80,7 @@ namespace AdamClub {
 			this->txt_find->Name = L"txt_find";
 			this->txt_find->Size = System::Drawing::Size(314, 31);
 			this->txt_find->TabIndex = 4;
-			this->txt_find->TextChanged += gcnew System::EventHandler(this, &AfficherEntraineur::AfficherEntraineur_Load);
+			this->txt_find->TextChanged += gcnew System::EventHandler(this, &AfficherEntraineur::txt_find_TextChanged);
 			// 
 			// dataGridView1
 			// 

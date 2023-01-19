@@ -323,6 +323,9 @@
     <EmbeddedResource Include="ModEntraineur.resx">
       <DependentUpon>ModEntraineur.h</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ModEquipe.resx">
+      <DependentUpon>ModEquipe.h</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ModEquipement.resx">
       <DependentUpon>ModEquipement.h</DependentUpon>
     </EmbeddedResource>
@@ -341,8 +344,14 @@
     <EmbeddedResource Include="SuprEntraineur.resx">
       <DependentUpon>SuprEntraineur.h</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="SuprEquipe.resx">
+      <DependentUpon>SuprEquipe.h</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="SuprEquipement.resx">
       <DependentUpon>SuprEquipement.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SuprSeance.resx">
+      <DependentUpon>SuprSeance.h</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SuprSport.resx">
       <DependentUpon>SuprSport.h</DependentUpon>
