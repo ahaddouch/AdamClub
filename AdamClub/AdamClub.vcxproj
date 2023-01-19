@@ -145,6 +145,7 @@
     <ClCompile Include="EquipeMain.cpp" />
     <ClCompile Include="equipement.cpp" />
     <ClCompile Include="EquipementMain.cpp" />
+    <ClCompile Include="mainSport.cpp" />
     <ClCompile Include="ModAdherent.cpp" />
     <ClCompile Include="ModEntraineur.cpp" />
     <ClCompile Include="ModEquipe.cpp" />
@@ -156,7 +157,6 @@
     <ClCompile Include="seance.cpp" />
     <ClCompile Include="SeanceMain.cpp" />
     <ClCompile Include="Sport.cpp" />
-    <ClCompile Include="SportMain.cpp" />
     <ClCompile Include="SuppEquipement.cpp" />
     <ClCompile Include="SuprAdherent.cpp" />
     <ClCompile Include="SuprEntraineur.cpp" />
@@ -223,6 +223,9 @@
     <ClInclude Include="EquipementMain.h">
       <FileType>CppForm</FileType>
     </ClInclude>
+    <ClInclude Include="mainSport.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
     <ClInclude Include="ModAdherent.h">
       <FileType>CppForm</FileType>
     </ClInclude>
@@ -247,9 +250,6 @@
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="Sport.h" />
-    <ClInclude Include="b">
-      <FileType>CppForm</FileType>
-    </ClInclude>
     <ClInclude Include="SuprEquipe.h">
       <FileType>CppForm</FileType>
     </ClInclude>
@@ -324,6 +324,9 @@
     <EmbeddedResource Include="EquipementMain.resx">
       <DependentUpon>EquipementMain.h</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="mainSport.resx">
+      <DependentUpon>mainSport.h</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ModAdherent.resx">
       <DependentUpon>ModAdherent.h</DependentUpon>
     </EmbeddedResource>
@@ -344,9 +347,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="SeanceMain.resx">
       <DependentUpon>SeanceMain.h</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="b.resx">
-      <DependentUpon>b</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SuprAdherent.resx">
       <DependentUpon>SuprAdherent.h</DependentUpon>

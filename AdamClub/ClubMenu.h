@@ -3,7 +3,7 @@
 #include "EntraineurMain.h"
 #include "EquipementMain.h"
 #include "EquipeMain.h"
-#include "SportMain.h"
+#include "mainSport.h"
 #include "SeanceMain.h"
 namespace AdamClub {
 
@@ -282,7 +282,7 @@ private: System::Void button4_Click(System::Object^ sender, System::EventArgs^ e
 }
 private: System::Void button6_Click(System::Object^ sender, System::EventArgs^ e) {
 
-	SportMain^ f = gcnew SportMain();
+	mainSport^ f = gcnew mainSport();
 	AfficherFenetre(f);
 }
 private: System::Void button3_Click_1(System::Object^ sender, System::EventArgs^ e) {

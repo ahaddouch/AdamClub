@@ -102,9 +102,6 @@
     <ClCompile Include="AfficherSport.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="SportMain.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="AddEquipe.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -137,6 +134,9 @@
     </ClCompile>
     <ClCompile Include="AdherentToEquipe.cpp">
       <Filter>Header Files</Filter>
+    </ClCompile>
+    <ClCompile Include="mainSport.cpp">
+      <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -221,9 +221,6 @@
     <ClInclude Include="AfficherSport.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="b">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="AddEquipe.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -255,6 +252,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="AdherentToEquipe.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="mainSport.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

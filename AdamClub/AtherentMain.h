@@ -114,6 +114,7 @@ namespace AdamClub {
 			this->button5->Text = L"Adhérents";
 			this->button5->TextAlign = System::Drawing::ContentAlignment::BottomCenter;
 			this->button5->UseVisualStyleBackColor = true;
+			this->button5->Click += gcnew System::EventHandler(this, &AtherentMain::button5_Click);
 			// 
 			// button1
 			// 
@@ -122,7 +123,7 @@ namespace AdamClub {
 			this->button1->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"button1.BackgroundImage")));
 			this->button1->FlatAppearance->BorderSize = 0;
 			this->button1->FlatStyle = System::Windows::Forms::FlatStyle::Popup;
-			this->button1->Location = System::Drawing::Point(12, 26);
+			this->button1->Location = System::Drawing::Point(24, 12);
 			this->button1->Name = L"button1";
 			this->button1->Size = System::Drawing::Size(96, 92);
 			this->button1->TabIndex = 1;
@@ -269,6 +270,9 @@ private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e
 private: System::Void p1_Paint(System::Object^ sender, System::Windows::Forms::PaintEventArgs^ e) {
 }
 private: System::Void panel1_Paint(System::Object^ sender, System::Windows::Forms::PaintEventArgs^ e) {
+}
+private: System::Void button5_Click(System::Object^ sender, System::EventArgs^ e) {
+
 }
 };
 }
