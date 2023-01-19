@@ -1,0 +1,225 @@
+#pragma once
+
+namespace AdamClub {
+
+	using namespace System;
+	using namespace System::ComponentModel;
+	using namespace System::Collections;
+	using namespace System::Windows::Forms;
+	using namespace System::Data;
+	using namespace System::Data::SqlClient;
+
+	using namespace System::Drawing;
+
+	/// <summary>
+	/// Summary for AdherentToEquipe
+	/// </summary>
+	public ref class AdherentToEquipe : public System::Windows::Forms::Form
+	{
+	public:
+		AdherentToEquipe(void)
+		{
+			InitializeComponent();
+			//
+			//TODO: Add the constructor code here
+			//
+		}
+
+	protected:
+		/// <summary>
+		/// Clean up any resources being used.
+		/// </summary>
+		~AdherentToEquipe()
+		{
+			if (components)
+			{
+				delete components;
+			}
+		}
+	private: System::Windows::Forms::ListBox^ lba;
+	protected:
+
+	private: System::Windows::Forms::ListBox^ lbe;
+	protected:
+
+	private: System::Windows::Forms::Button^ button2;
+	private: System::Windows::Forms::Button^ button1;
+	private: System::Windows::Forms::Label^ label1;
+	private: System::Windows::Forms::Label^ label2;
+
+	private:
+		/// <summary>
+		/// Required designer variable.
+		/// </summary>
+		System::ComponentModel::Container ^components;
+
+#pragma region Windows Form Designer generated code
+		/// <summary>
+		/// Required method for Designer support - do not modify
+		/// the contents of this method with the code editor.
+		/// </summary>
+		void InitializeComponent(void)
+		{
+			this->lba = (gcnew System::Windows::Forms::ListBox());
+			this->lbe = (gcnew System::Windows::Forms::ListBox());
+			this->button2 = (gcnew System::Windows::Forms::Button());
+			this->button1 = (gcnew System::Windows::Forms::Button());
+			this->label1 = (gcnew System::Windows::Forms::Label());
+			this->label2 = (gcnew System::Windows::Forms::Label());
+			this->SuspendLayout();
+			// 
+			// lba
+			// 
+			this->lba->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 20.25F));
+			this->lba->FormattingEnabled = true;
+			this->lba->ItemHeight = 31;
+			this->lba->Location = System::Drawing::Point(208, 107);
+			this->lba->Name = L"lba";
+			this->lba->Size = System::Drawing::Size(268, 314);
+			this->lba->TabIndex = 0;
+			// 
+			// lbe
+			// 
+			this->lbe->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 20.25F));
+			this->lbe->FormattingEnabled = true;
+			this->lbe->ItemHeight = 31;
+			this->lbe->Location = System::Drawing::Point(777, 107);
+			this->lbe->Name = L"lbe";
+			this->lbe->Size = System::Drawing::Size(268, 314);
+			this->lbe->TabIndex = 0;
+			// 
+			// button2
+			// 
+			this->button2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 20));
+			this->button2->ImeMode = System::Windows::Forms::ImeMode::NoControl;
+			this->button2->Location = System::Drawing::Point(1025, 505);
+			this->button2->Margin = System::Windows::Forms::Padding(2);
+			this->button2->Name = L"button2";
+			this->button2->Size = System::Drawing::Size(167, 51);
+			this->button2->TabIndex = 40;
+			this->button2->Text = L"Cancel";
+			this->button2->UseVisualStyleBackColor = true;
+			this->button2->Click += gcnew System::EventHandler(this, &AdherentToEquipe::button2_Click);
+			// 
+			// button1
+			// 
+			this->button1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 20));
+			this->button1->ImeMode = System::Windows::Forms::ImeMode::NoControl;
+			this->button1->Location = System::Drawing::Point(838, 505);
+			this->button1->Margin = System::Windows::Forms::Padding(2);
+			this->button1->Name = L"button1";
+			this->button1->Size = System::Drawing::Size(167, 51);
+			this->button1->TabIndex = 41;
+			this->button1->Text = L"Ajouter";
+			this->button1->UseVisualStyleBackColor = true;
+			// 
+			// label1
+			// 
+			this->label1->AutoSize = true;
+			this->label1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 25.25F));
+			this->label1->ForeColor = System::Drawing::Color::White;
+			this->label1->Location = System::Drawing::Point(849, 38);
+			this->label1->Name = L"label1";
+			this->label1->Size = System::Drawing::Size(124, 39);
+			this->label1->TabIndex = 42;
+			this->label1->Text = L"Equipe";
+			this->label1->Click += gcnew System::EventHandler(this, &AdherentToEquipe::label1_Click);
+			// 
+			// label2
+			// 
+			this->label2->AutoSize = true;
+			this->label2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 25.25F));
+			this->label2->ForeColor = System::Drawing::Color::White;
+			this->label2->Location = System::Drawing::Point(270, 38);
+			this->label2->Name = L"label2";
+			this->label2->Size = System::Drawing::Size(145, 39);
+			this->label2->TabIndex = 42;
+			this->label2->Text = L"Atherent";
+			// 
+			// AdherentToEquipe
+			// 
+			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
+			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
+			this->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(13)), static_cast<System::Int32>(static_cast<System::Byte>(27)),
+				static_cast<System::Int32>(static_cast<System::Byte>(48)));
+			this->ClientSize = System::Drawing::Size(1284, 608);
+			this->Controls->Add(this->label2);
+			this->Controls->Add(this->label1);
+			this->Controls->Add(this->button2);
+			this->Controls->Add(this->button1);
+			this->Controls->Add(this->lbe);
+			this->Controls->Add(this->lba);
+			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::None;
+			this->Name = L"AdherentToEquipe";
+			this->Text = L"AdherentToEquipe";
+			this->Load += gcnew System::EventHandler(this, &AdherentToEquipe::AdherentToEquipe_Load);
+			this->ResumeLayout(false);
+			this->PerformLayout();
+
+		}
+#pragma endregion
+	private: System::Void label1_Click(System::Object^ sender, System::EventArgs^ e) {
+	}
+private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e) {
+	this->Close();
+}
+	   public:
+		   String^ connString = "Data Source=ADAM;Initial Catalog=club;Integrated Security=True";
+
+private: System::Void AdherentToEquipe_Load(System::Object^ sender, System::EventArgs^ e) {
+	SqlConnection^ connection = gcnew SqlConnection(connString);
+
+	try {
+
+		connection->Open();
+
+
+		SqlCommand^ command = connection->CreateCommand();
+
+		command->CommandText = "SELECT id FROM adherent";
+
+		SqlDataReader^ reader = command->ExecuteReader();
+
+		lba->Items->Clear();
+
+		while (reader->Read()) {
+			lba->Items->Add(reader->GetInt32(0));
+		}
+
+		reader->Close();
+
+		connection->Close();
+	}
+	catch (Exception^ ex) {
+		MessageBox::Show("Échec de connection",
+			"erroooor", MessageBoxButtons::OK);
+	}
+	//////////////////////////////////////////
+	try {
+
+		connection->Open();
+
+
+		SqlCommand^ command = connection->CreateCommand();
+
+		command->CommandText = "SELECT id FROM equipe";
+
+		SqlDataReader^ reader = command->ExecuteReader();
+
+		lbe->Items->Clear();
+
+		while (reader->Read()) {
+			lbe->Items->Add(reader->GetInt32(0));
+		}
+
+		reader->Close();
+
+		connection->Close();
+	}
+	catch (Exception^ ex) {
+		MessageBox::Show("Échec de connection",
+			"erroooor", MessageBoxButtons::OK);
+	}
+}
+};
+}

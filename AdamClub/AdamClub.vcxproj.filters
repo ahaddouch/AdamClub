@@ -135,6 +135,9 @@
     <ClCompile Include="SeanceMain.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="AdherentToEquipe.cpp">
+      <Filter>Header Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="AddAdherent.h">
@@ -218,7 +221,7 @@
     <ClInclude Include="AfficherSport.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="SportMain.h">
+    <ClInclude Include="b">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="AddEquipe.h">
@@ -249,6 +252,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="SeanceMain.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="AdherentToEquipe.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

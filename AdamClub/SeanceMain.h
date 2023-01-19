@@ -46,6 +46,7 @@ namespace AdamClub {
 	private: System::Windows::Forms::Button^ btn_supp;
 	private: System::Windows::Forms::Button^ btn_mod;
 	private: System::Windows::Forms::Button^ btn_add;
+	private: System::Windows::Forms::Button^ button4;
 
 	private:
 		/// <summary>
@@ -63,6 +64,7 @@ namespace AdamClub {
 			System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(SeanceMain::typeid));
 			this->p1 = (gcnew System::Windows::Forms::FlowLayoutPanel());
 			this->panel1 = (gcnew System::Windows::Forms::Panel());
+			this->button4 = (gcnew System::Windows::Forms::Button());
 			this->button1 = (gcnew System::Windows::Forms::Button());
 			this->btn_search = (gcnew System::Windows::Forms::Button());
 			this->btn_supp = (gcnew System::Windows::Forms::Button());
@@ -85,6 +87,7 @@ namespace AdamClub {
 			// 
 			// panel1
 			// 
+			this->panel1->Controls->Add(this->button4);
 			this->panel1->Controls->Add(this->button1);
 			this->panel1->Controls->Add(this->btn_search);
 			this->panel1->Controls->Add(this->btn_supp);
@@ -97,6 +100,21 @@ namespace AdamClub {
 			this->panel1->Size = System::Drawing::Size(1300, 154);
 			this->panel1->TabIndex = 2;
 			this->panel1->Paint += gcnew System::Windows::Forms::PaintEventHandler(this, &SeanceMain::panel1_Paint);
+			// 
+			// button4
+			// 
+			this->button4->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"button4.BackgroundImage")));
+			this->button4->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Center;
+			this->button4->Enabled = false;
+			this->button4->Font = (gcnew System::Drawing::Font(L"MV Boli", 25, static_cast<System::Drawing::FontStyle>((System::Drawing::FontStyle::Bold | System::Drawing::FontStyle::Italic))));
+			this->button4->ForeColor = System::Drawing::Color::MidnightBlue;
+			this->button4->Location = System::Drawing::Point(1107, 0);
+			this->button4->Name = L"button4";
+			this->button4->Size = System::Drawing::Size(193, 158);
+			this->button4->TabIndex = 2;
+			this->button4->Text = L"Séances";
+			this->button4->TextAlign = System::Drawing::ContentAlignment::BottomCenter;
+			this->button4->UseVisualStyleBackColor = true;
 			// 
 			// button1
 			// 
@@ -147,7 +165,7 @@ namespace AdamClub {
 			this->btn_mod->Name = L"btn_mod";
 			this->btn_mod->Size = System::Drawing::Size(130, 102);
 			this->btn_mod->TabIndex = 0;
-			this->btn_mod->Text = L"Modefier";
+			this->btn_mod->Text = L" Modifier";
 			this->btn_mod->UseVisualStyleBackColor = true;
 			this->btn_mod->Click += gcnew System::EventHandler(this, &SeanceMain::btn_mod_Click);
 			// 

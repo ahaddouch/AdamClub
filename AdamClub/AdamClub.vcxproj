@@ -130,6 +130,7 @@
     <ClCompile Include="AddSeance.cpp" />
     <ClCompile Include="AddSport.cpp" />
     <ClCompile Include="Adherent.cpp" />
+    <ClCompile Include="AdherentToEquipe.cpp" />
     <ClCompile Include="AfficherAdherent.cpp" />
     <ClCompile Include="AfficherEntraineur.cpp" />
     <ClCompile Include="AfficherEquipe.cpp" />
@@ -183,6 +184,9 @@
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="Adherent.h" />
+    <ClInclude Include="AdherentToEquipe.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
     <ClInclude Include="AfficherAdherent.h">
       <FileType>CppForm</FileType>
     </ClInclude>
@@ -243,7 +247,7 @@
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="Sport.h" />
-    <ClInclude Include="SportMain.h">
+    <ClInclude Include="b">
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="SuprEquipe.h">
@@ -283,6 +287,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="AddSport.resx">
       <DependentUpon>AddSport.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AdherentToEquipe.resx">
+      <DependentUpon>AdherentToEquipe.h</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AfficherAdherent.resx">
       <DependentUpon>AfficherAdherent.h</DependentUpon>
@@ -329,14 +336,17 @@
     <EmbeddedResource Include="ModEquipement.resx">
       <DependentUpon>ModEquipement.h</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ModSeance.resx">
+      <DependentUpon>ModSeance.h</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ModSport.resx">
       <DependentUpon>ModSport.h</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SeanceMain.resx">
       <DependentUpon>SeanceMain.h</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="SportMain.resx">
-      <DependentUpon>SportMain.h</DependentUpon>
+    <EmbeddedResource Include="b.resx">
+      <DependentUpon>b</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SuprAdherent.resx">
       <DependentUpon>SuprAdherent.h</DependentUpon>

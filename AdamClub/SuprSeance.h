@@ -39,8 +39,8 @@ namespace AdamClub {
 	protected:
 	private: System::Windows::Forms::Button^ button2;
 	private: System::Windows::Forms::Button^ button1;
-	private: System::Windows::Forms::TextBox^ txt_nom;
-	private: System::Windows::Forms::Label^ label2;
+
+
 	private: System::Windows::Forms::Label^ label1;
 
 	private:
@@ -59,8 +59,6 @@ namespace AdamClub {
 			this->lb = (gcnew System::Windows::Forms::ListBox());
 			this->button2 = (gcnew System::Windows::Forms::Button());
 			this->button1 = (gcnew System::Windows::Forms::Button());
-			this->txt_nom = (gcnew System::Windows::Forms::TextBox());
-			this->label2 = (gcnew System::Windows::Forms::Label());
 			this->label1 = (gcnew System::Windows::Forms::Label());
 			this->SuspendLayout();
 			// 
@@ -101,30 +99,6 @@ namespace AdamClub {
 			this->button1->UseVisualStyleBackColor = true;
 			this->button1->Click += gcnew System::EventHandler(this, &SuprSeance::button1_Click);
 			// 
-			// txt_nom
-			// 
-			this->txt_nom->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 20));
-			this->txt_nom->Location = System::Drawing::Point(627, 305);
-			this->txt_nom->Margin = System::Windows::Forms::Padding(2);
-			this->txt_nom->Name = L"txt_nom";
-			this->txt_nom->Size = System::Drawing::Size(250, 38);
-			this->txt_nom->TabIndex = 57;
-			this->txt_nom->TextChanged += gcnew System::EventHandler(this, &SuprSeance::txt_nom_TextChanged);
-			// 
-			// label2
-			// 
-			this->label2->AutoSize = true;
-			this->label2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 20));
-			this->label2->ForeColor = System::Drawing::Color::White;
-			this->label2->ImeMode = System::Windows::Forms::ImeMode::NoControl;
-			this->label2->Location = System::Drawing::Point(337, 308);
-			this->label2->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
-			this->label2->Name = L"label2";
-			this->label2->Size = System::Drawing::Size(71, 31);
-			this->label2->TabIndex = 55;
-			this->label2->Text = L"Nom";
-			this->label2->Click += gcnew System::EventHandler(this, &SuprSeance::label2_Click);
-			// 
 			// label1
 			// 
 			this->label1->AutoSize = true;
@@ -149,8 +123,6 @@ namespace AdamClub {
 			this->Controls->Add(this->lb);
 			this->Controls->Add(this->button2);
 			this->Controls->Add(this->button1);
-			this->Controls->Add(this->txt_nom);
-			this->Controls->Add(this->label2);
 			this->Controls->Add(this->label1);
 			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::None;
 			this->Name = L"SuprSeance";
@@ -168,7 +140,7 @@ public:
 
 		try {
 			lb->Items->Clear();
-			txt_nom->Clear();
+			
 			connection->Open();
 
 			SqlCommand^ command = connection->CreateCommand();
@@ -197,35 +169,7 @@ private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e
 		this->Close();
 	}
 private: System::Void lb_SelectedIndexChanged(System::Object^ sender, System::EventArgs^ e) {
-	txt_nom->Clear();
-
-
-
-	SqlConnection^ connection = gcnew SqlConnection(connString);
-
-	try {
-		connection->Open();
-
-		SqlCommand^ command = connection->CreateCommand();
-		int id = Convert::ToInt64(lb->Text);
-		command->CommandText = "SELECT  nom  FROM seance WHERE Id = @id";
-		command->Parameters->AddWithValue("@id", id);
-
-		SqlDataReader^ reader = command->ExecuteReader();
-
-		if (reader->Read()) {
-			txt_nom->Text = reader->GetString(0);
-
-		}
-
-		reader->Close();
-
-		connection->Close();
-	}
-	catch (Exception^ ex) {
-		MessageBox::Show("moxkil f cenection",
-			"error", MessageBoxButtons::OK);
-	}
+	
 }
 private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
 	int id = Convert::ToInt64(lb->Text);

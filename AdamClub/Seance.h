@@ -10,13 +10,12 @@ ref class Seance
 {
 private:
 	int id;
-	
 	int idequipe;
-	String^ salle;
+	int salle;
 	DateTime date;
 public:
 	String^ connString = "Data Source=ADAM;Initial Catalog=club;Integrated Security=True";
-	Seance(int id, int idequipe,  String^ salle,DateTime date) {
+	Seance(int id, int idequipe,  int salle,DateTime date) {
 		this->id = id;
 		this->idequipe = idequipe;
 		this->salle = salle;
@@ -33,7 +32,7 @@ public:
 			SqlConnection sqlConn(connString);
 			sqlConn.Open();
 
-			String^ sqlQuery = "INSERT INTO seance (id,idequipe,salle, nom) VALUES (@id, @idequipe, @salle, @date);";
+			String^ sqlQuery = "INSERT INTO seance (id,idequipe,salle, date) VALUES (@id, @idequipe, @salle, @date);";
 
 			SqlCommand command(sqlQuery, % sqlConn);
 			command.Parameters->AddWithValue("@id", id);

@@ -90,7 +90,7 @@ namespace AdamClub {
 			this->p1->Dock = System::Windows::Forms::DockStyle::Fill;
 			this->p1->Location = System::Drawing::Point(0, 0);
 			this->p1->Name = L"p1";
-			this->p1->Size = System::Drawing::Size(1284, 771);
+			this->p1->Size = System::Drawing::Size(1289, 771);
 			this->p1->TabIndex = 0;
 			this->p1->Paint += gcnew System::Windows::Forms::PaintEventHandler(this, &ClubMenu::p1_Paint);
 			// 
@@ -99,7 +99,7 @@ namespace AdamClub {
 			this->p2->Dock = System::Windows::Forms::DockStyle::Fill;
 			this->p2->Location = System::Drawing::Point(0, 0);
 			this->p2->Name = L"p2";
-			this->p2->Size = System::Drawing::Size(1284, 771);
+			this->p2->Size = System::Drawing::Size(1289, 771);
 			this->p2->TabIndex = 1;
 			this->p2->Click += gcnew System::EventHandler(this, &ClubMenu::p2_Click);
 			this->p2->Paint += gcnew System::Windows::Forms::PaintEventHandler(this, &ClubMenu::p2_Paint);
@@ -201,10 +201,11 @@ namespace AdamClub {
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(13)), static_cast<System::Int32>(static_cast<System::Byte>(27)),
 				static_cast<System::Int32>(static_cast<System::Byte>(48)));
-			this->ClientSize = System::Drawing::Size(1284, 771);
+			this->ClientSize = System::Drawing::Size(1289, 771);
 			this->Controls->Add(this->p1);
 			this->Icon = (cli::safe_cast<System::Drawing::Icon^>(resources->GetObject(L"$this.Icon")));
 			this->Name = L"ClubMenu";
+			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
 			this->Text = L"ClubMenu";
 			this->FormClosing += gcnew System::Windows::Forms::FormClosingEventHandler(this, &ClubMenu::ClubMenu_FormClosing);
 			this->Load += gcnew System::EventHandler(this, &ClubMenu::ClubMenu_Load);
