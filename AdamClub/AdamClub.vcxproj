@@ -272,8 +272,17 @@
     <EmbeddedResource Include="AddEntraineur.resx">
       <DependentUpon>AddEntraineur.h</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="AddEquipe.resx">
+      <DependentUpon>AddEquipe.h</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AddEquipement.resx">
       <DependentUpon>AddEquipement.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddSeance.resx">
+      <DependentUpon>AddSeance.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddSport.resx">
+      <DependentUpon>AddSport.h</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AfficherAdherent.resx">
       <DependentUpon>AfficherAdherent.h</DependentUpon>
@@ -281,8 +290,17 @@
     <EmbeddedResource Include="AfficherEntraineur.resx">
       <DependentUpon>AfficherEntraineur.h</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="AfficherEquipe.resx">
+      <DependentUpon>AfficherEquipe.h</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AfficherEquipement.resx">
       <DependentUpon>AfficherEquipement.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AfficherSeance.resx">
+      <DependentUpon>AfficherSeance.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AfficherSport.resx">
+      <DependentUpon>AfficherSport.h</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AtherentMain.resx">
       <DependentUpon>AtherentMain.h</DependentUpon>
@@ -292,6 +310,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="EntraineurMain.resx">
       <DependentUpon>EntraineurMain.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EquipeMain.resx">
+      <DependentUpon>EquipeMain.h</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="EquipementMain.resx">
       <DependentUpon>EquipementMain.h</DependentUpon>
@@ -305,8 +326,14 @@
     <EmbeddedResource Include="ModEquipement.resx">
       <DependentUpon>ModEquipement.h</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ModSport.resx">
+      <DependentUpon>ModSport.h</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="SeanceMain.resx">
       <DependentUpon>SeanceMain.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SportMain.resx">
+      <DependentUpon>SportMain.h</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SuprAdherent.resx">
       <DependentUpon>SuprAdherent.h</DependentUpon>
@@ -316,6 +343,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="SuprEquipement.resx">
       <DependentUpon>SuprEquipement.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SuprSport.resx">
+      <DependentUpon>SuprSport.h</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

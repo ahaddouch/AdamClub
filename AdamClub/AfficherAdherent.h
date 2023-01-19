@@ -169,34 +169,35 @@ namespace AdamClub {
 private: System::Void btn_find_Click(System::Object^ sender, System::EventArgs^ e) {
 }
 private: System::Void txt_find_TextChanged(System::Object^ sender, System::EventArgs^ e) {
+	dataGridView1->DataSource = nullptr;
+
 	String^ connectionString = "Data Source=ADAM;Initial Catalog=club;Integrated Security=True";
 
- 	SqlConnection^ connection = gcnew SqlConnection(connectionString);
+	SqlConnection^ connection = gcnew SqlConnection(connectionString);
 
 	try {
- 		connection->Open();
+		connection->Open();
 
- 		SqlCommand^ command = connection->CreateCommand();
+		SqlCommand^ command = connection->CreateCommand();
 
- 		command->CommandText = "SELECT * FROM adherent where Id like '%@txt% '";
-		command->Parameters->AddWithValue("@txt",Convert::ToInt64( txt_find->Text->ToString()));
+		command->CommandText = "SELECT * FROM adherent where nom like '%" + txt_find->Text->ToString() + "%'";
 
- 		SqlDataAdapter^ dataAdapter = gcnew SqlDataAdapter(command);
+		SqlDataAdapter^ dataAdapter1 = gcnew SqlDataAdapter(command);
 
- 		DataSet^ dataSet = gcnew DataSet();
+		DataSet^ dataSet = gcnew DataSet();
 
- 		dataAdapter->Fill(dataSet, "adherent");
+		dataAdapter1->Fill(dataSet, "adherent");
 
- 		BindingSource^ bindingSource = gcnew BindingSource();
-		bindingSource->DataSource = dataSet->Tables["adherent"];
+		BindingSource^ bindingSource1 = gcnew BindingSource();
+		bindingSource1->DataSource = dataSet->Tables["adherent"];
 
- 		dataGridView1->DataSource = bindingSource;
+		dataGridView1->DataSource = bindingSource1;
 
- 		connection->Close();
+		connection->Close();
 	}
 	catch (Exception^ ex) {
-		MessageBox::Show("moxkil of get data",
-			"eroor", MessageBoxButtons::OK);
+		MessageBox::Show("Échec de l'enregistrement d'un nouvel adherent",
+			"Échec de l'enregistrement", MessageBoxButtons::OK);
 	}
 }
 };

@@ -2,6 +2,9 @@
 #include "AtherentMain.h"
 #include "EntraineurMain.h"
 #include "EquipementMain.h"
+#include "EquipeMain.h"
+#include "SportMain.h"
+#include "SeanceMain.h"
 namespace AdamClub {
 
 	using namespace System;
@@ -44,6 +47,7 @@ namespace AdamClub {
 	private: System::Windows::Forms::Button^ button1;
 	private: System::Windows::Forms::Button^ button5;
 	private: System::Windows::Forms::Panel^ p2;
+	private: System::Windows::Forms::Button^ button6;
 
 
 	private:
@@ -63,6 +67,7 @@ namespace AdamClub {
 			this->p1 = (gcnew System::Windows::Forms::Panel());
 			this->p2 = (gcnew System::Windows::Forms::Panel());
 			this->button4 = (gcnew System::Windows::Forms::Button());
+			this->button6 = (gcnew System::Windows::Forms::Button());
 			this->button5 = (gcnew System::Windows::Forms::Button());
 			this->button3 = (gcnew System::Windows::Forms::Button());
 			this->button2 = (gcnew System::Windows::Forms::Button());
@@ -77,6 +82,7 @@ namespace AdamClub {
 			this->p1->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Center;
 			this->p1->Controls->Add(this->p2);
 			this->p1->Controls->Add(this->button4);
+			this->p1->Controls->Add(this->button6);
 			this->p1->Controls->Add(this->button5);
 			this->p1->Controls->Add(this->button3);
 			this->p1->Controls->Add(this->button2);
@@ -101,7 +107,7 @@ namespace AdamClub {
 			// button4
 			// 
 			this->button4->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"button4.BackgroundImage")));
-			this->button4->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Zoom;
+			this->button4->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Center;
 			this->button4->Font = (gcnew System::Drawing::Font(L"MV Boli", 25, static_cast<System::Drawing::FontStyle>((System::Drawing::FontStyle::Bold | System::Drawing::FontStyle::Italic))));
 			this->button4->ForeColor = System::Drawing::Color::MidnightBlue;
 			this->button4->Location = System::Drawing::Point(853, 573);
@@ -111,11 +117,27 @@ namespace AdamClub {
 			this->button4->Text = L"Séances";
 			this->button4->TextAlign = System::Drawing::ContentAlignment::BottomCenter;
 			this->button4->UseVisualStyleBackColor = true;
+			this->button4->Click += gcnew System::EventHandler(this, &ClubMenu::button4_Click);
+			// 
+			// button6
+			// 
+			this->button6->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"button6.BackgroundImage")));
+			this->button6->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Zoom;
+			this->button6->Font = (gcnew System::Drawing::Font(L"MV Boli", 25, static_cast<System::Drawing::FontStyle>((System::Drawing::FontStyle::Bold | System::Drawing::FontStyle::Italic))));
+			this->button6->ForeColor = System::Drawing::Color::MidnightBlue;
+			this->button6->Location = System::Drawing::Point(550, 596);
+			this->button6->Name = L"button6";
+			this->button6->Size = System::Drawing::Size(198, 158);
+			this->button6->TabIndex = 0;
+			this->button6->Text = L"Sport";
+			this->button6->TextAlign = System::Drawing::ContentAlignment::BottomCenter;
+			this->button6->UseVisualStyleBackColor = true;
+			this->button6->Click += gcnew System::EventHandler(this, &ClubMenu::button6_Click);
 			// 
 			// button5
 			// 
 			this->button5->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"button5.BackgroundImage")));
-			this->button5->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Zoom;
+			this->button5->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Center;
 			this->button5->Font = (gcnew System::Drawing::Font(L"MV Boli", 25, static_cast<System::Drawing::FontStyle>((System::Drawing::FontStyle::Bold | System::Drawing::FontStyle::Italic))));
 			this->button5->ForeColor = System::Drawing::Color::MidnightBlue;
 			this->button5->Location = System::Drawing::Point(550, 12);
@@ -145,7 +167,7 @@ namespace AdamClub {
 			// button2
 			// 
 			this->button2->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"button2.BackgroundImage")));
-			this->button2->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
+			this->button2->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Center;
 			this->button2->Font = (gcnew System::Drawing::Font(L"MV Boli", 23, static_cast<System::Drawing::FontStyle>((System::Drawing::FontStyle::Bold | System::Drawing::FontStyle::Italic))));
 			this->button2->ForeColor = System::Drawing::Color::MidnightBlue;
 			this->button2->ImageAlign = System::Drawing::ContentAlignment::MiddleLeft;
@@ -161,7 +183,7 @@ namespace AdamClub {
 			// button1
 			// 
 			this->button1->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"button1.BackgroundImage")));
-			this->button1->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Zoom;
+			this->button1->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Center;
 			this->button1->Font = (gcnew System::Drawing::Font(L"MV Boli", 22, static_cast<System::Drawing::FontStyle>((System::Drawing::FontStyle::Bold | System::Drawing::FontStyle::Italic))));
 			this->button1->ForeColor = System::Drawing::Color::MidnightBlue;
 			this->button1->Location = System::Drawing::Point(899, 151);
@@ -252,6 +274,15 @@ private: System::Void p2_Click(System::Object^ sender, System::EventArgs^ e) {
 	{
 		p2->Hide();
 	}
+}
+private: System::Void button4_Click(System::Object^ sender, System::EventArgs^ e) {
+	SeanceMain^ f = gcnew SeanceMain();
+	AfficherFenetre(f);
+}
+private: System::Void button6_Click(System::Object^ sender, System::EventArgs^ e) {
+
+	SportMain^ f = gcnew SportMain();
+	AfficherFenetre(f);
 }
 };
 }

@@ -72,6 +72,7 @@ namespace AdamClub {
 			this->txt_find->Size = System::Drawing::Size(314, 31);
 			this->txt_find->TabIndex = 3;
 			this->txt_find->Tag = L"jjjjjjjjj";
+			this->txt_find->TextChanged += gcnew System::EventHandler(this, &AfficherEquipement::txt_find_TextChanged);
 			// 
 			// dataGridView1
 			// 
@@ -141,5 +142,38 @@ namespace AdamClub {
 				"Échec de l'enregistrement", MessageBoxButtons::OK);
 		}
 	}
-	};
+	private: System::Void txt_find_TextChanged(System::Object^ sender, System::EventArgs^ e) {
+		dataGridView1->DataSource = nullptr;
+		
+		String^ connectionString = "Data Source=ADAM;Initial Catalog=club;Integrated Security=True";
+
+		SqlConnection^ connection = gcnew SqlConnection(connectionString);
+		
+		try {
+			connection->Open();
+
+			SqlCommand^ command = connection->CreateCommand();
+
+			command->CommandText = "SELECT * FROM equipement where nom like '%"+txt_find->Text->ToString() + "%'";
+
+			SqlDataAdapter^ dataAdapter1 = gcnew SqlDataAdapter(command);
+
+			DataSet^ dataSet = gcnew DataSet();
+
+			dataAdapter1->Fill(dataSet, "equipement");
+
+			BindingSource^ bindingSource1 = gcnew BindingSource();
+			bindingSource1->DataSource = dataSet->Tables["equipement"];
+
+			dataGridView1->DataSource = bindingSource1;
+
+			connection->Close();
+		}
+		catch (Exception^ ex) {
+			MessageBox::Show("Échec de l'enregistrement d'un nouvel Equipement",
+				"Échec de l'enregistrement", MessageBoxButtons::OK);
+		}
+
+	}
+};
 }
