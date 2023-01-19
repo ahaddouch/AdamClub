@@ -297,8 +297,8 @@ namespace AdamClub {
 	String^ tel = txt_tel->Text->ToString();
 	DateTime^ dn=dtn->Value;
 	DateTime^ da = dta->Value;
-
-	Adherent ad(id, nom, tel, dn, da);
+	int x=7;
+	Adherent ad(id, nom, tel, dn, da,x);
 	ad.upload();
 	txt_id->Clear();
 	txt_nom->Clear();

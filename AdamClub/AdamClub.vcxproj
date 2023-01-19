@@ -150,7 +150,6 @@
     <ClCompile Include="ModEquipement.cpp" />
     <ClCompile Include="ModSeance.cpp" />
     <ClCompile Include="ModSport.cpp" />
-    <ClCompile Include="MyForm.cpp" />
     <ClCompile Include="Personne.cpp" />
     <ClCompile Include="Program.cpp" />
     <ClCompile Include="seance.cpp" />
@@ -236,9 +235,6 @@
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="ModSport.h">
-      <FileType>CppForm</FileType>
-    </ClInclude>
-    <ClInclude Include="MyForm.h">
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="Personne.h" />

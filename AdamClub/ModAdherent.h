@@ -293,7 +293,8 @@ private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e
 	String^ tel = txt_tel->Text->ToString();
 	DateTime^ dn = dtn->Value;
 	DateTime^ da = dta->Value;
-	Adherent ad(id, nom, tel, dn, da);
+	int x=5;
+	Adherent ad(id, nom, tel, dn, da,x);
 	ad.Update();
 }
 private: System::Void lb_SelectedIndexChanged(System::Object^ sender, System::EventArgs^ e) {

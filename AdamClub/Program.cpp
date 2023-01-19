@@ -29,9 +29,9 @@ void main()
 	//AdamClub::AtherentMain f;
 	//f.ShowDialog();
 	
-	Adherent ad (87, "jggf", "gjgukh", DateTime::Now, DateTime::Now);
+	//Adherent ad (87, "jggf", "gjgukh", DateTime::Now, DateTime::Now);
 	//Adherent^ adg = gcnew Adherent();
-	ad.SetValues(87, "jggf", "gjgukh", DateTime::Now, DateTime::Now);
+	//ad.SetValues(87, "jggf", "gjgukh", DateTime::Now, DateTime::Now);
 	//vector<Adherent> listAdherent;
 	
 }

@@ -13,27 +13,24 @@ ref class Adherent:public Personne
 private:
 	
 	DateTime^ da;
+	int idequipe;
 
 public:
 	
-	Adherent(int id, String^ nom, String^ tel, DateTime^ dn, DateTime^ da) {
+	Adherent(int id, String^ nom, String^ tel, DateTime^ dn, DateTime^ da,int  idequipe) {
 		this->id = id;
 		this->nom = nom;
 		this->tel =tel;
 		this->dn = dn;
 		this->da = da;
+		this->idequipe = idequipe;
 	}
 	Adherent(int id) {
 		this->id = id;
 	}
 
 
-	void SetValues(int id, String^ nom, String^ tel, DateTime^ dn, DateTime^ da) {
-		this->id = id;
-		this->nom = nom;
-		this->tel = tel;
-		this->dn = dn;
-	}
+	
 	String^ connString = "Data Source=ADAM;Initial Catalog=club;Integrated Security=True";
 	void upload() {
 		try {
@@ -41,7 +38,7 @@ public:
 			SqlConnection sqlConn(connString);
 			sqlConn.Open();
 
-			String^ sqlQuery = "INSERT INTO adherent  VALUES (@id, @nom, @tel, @dn, @da);";
+			String^ sqlQuery = "INSERT INTO adherent  VALUES (@id, @nom, @tel, @dn, @da,@idequipe);";
 
 			SqlCommand command(sqlQuery, % sqlConn);
 			command.Parameters->AddWithValue("@id", id);
@@ -49,6 +46,7 @@ public:
 			command.Parameters->AddWithValue("@tel", tel);
 			command.Parameters->AddWithValue("@dn", dn);
 			command.Parameters->AddWithValue("@da", da);
+			command.Parameters->AddWithValue("@idequipe", idequipe);
 
 			command.ExecuteNonQuery();
 
@@ -62,28 +60,7 @@ public:
 				"Échec de l'enregistrement", MessageBoxButtons::OK);
 		}
 	}
-	/*void uploadv2() {
-		try {
-			
-			SqlConnection sqlConn(connString);
-			sqlConn.Open();
-
-			String^ sqlQuery = "INSERT INTO adherent (Id,nom,tel,dn,da)  VALUES (" + id.ToString() + "," + nom + "," + tel + "," + Convert::ToString(dn) + "," + Convert::ToString(dn) + ")";
-
-			SqlCommand command(sqlQuery, % sqlConn);
-			
-			command.ExecuteNonQuery();
-
-
-			MessageBox::Show("Adherent ajouter avec succes",
-				"Inscription reussie", MessageBoxButtons::OK);
-			sqlConn.Close();
-		}
-		catch (Exception^ ex) {
-			MessageBox::Show("Échec de l'enregistrement d'un nouvel adhérent",
-				"Échec de l'enregistrement", MessageBoxButtons::OK);
-		}
-	}*/
+	
 	void Update() {
 		
 		
@@ -96,14 +73,14 @@ public:
 
  			SqlCommand^ command = connection->CreateCommand();
 
- 			command->CommandText = "UPDATE adherent SET nom = @nom , tele=@tel , dn = @dn ,da=@da WHERE Id = @id";
+ 			command->CommandText = "UPDATE adherent SET nom = @nom , tele=@tel , dn = @dn ,da=@da,idequipe=@idequipe WHERE Id = @id";
 
  			command->Parameters->AddWithValue("@id", id);
 			command->Parameters->AddWithValue("@nom", nom);
 			command->Parameters->AddWithValue("@tel", tel);
 			command->Parameters->AddWithValue("@dn", dn);
 			command->Parameters->AddWithValue("@da", da);
-
+			command->Parameters->AddWithValue("@idequipe", idequipe);
  			command->ExecuteNonQuery();
 
  			connection->Close();

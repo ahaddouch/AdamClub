@@ -129,9 +129,6 @@
     <ClCompile Include="SuprSeance.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="MyForm.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="AfficherSeance.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -246,9 +243,6 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="SuprSeance.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="MyForm.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="AfficherSeance.h">
