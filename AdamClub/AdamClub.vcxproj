@@ -125,25 +125,44 @@
   <ItemGroup>
     <ClCompile Include="AddAdherent.cpp" />
     <ClCompile Include="AddEntraineur.cpp" />
+    <ClCompile Include="AddEquipe.cpp" />
     <ClCompile Include="AddEquipement.cpp" />
+    <ClCompile Include="AddSeance.cpp" />
+    <ClCompile Include="AddSport.cpp" />
     <ClCompile Include="Adherent.cpp" />
     <ClCompile Include="AfficherAdherent.cpp" />
     <ClCompile Include="AfficherEntraineur.cpp" />
+    <ClCompile Include="AfficherEquipe.cpp" />
     <ClCompile Include="AfficherEquipement.cpp" />
+    <ClCompile Include="AfficherSeance.cpp" />
+    <ClCompile Include="AfficherSport.cpp" />
     <ClCompile Include="AtherentMain.cpp" />
     <ClCompile Include="ClubMenu.cpp" />
     <ClCompile Include="Entraineur.cpp" />
     <ClCompile Include="EntraineurMain.cpp" />
+    <ClCompile Include="Equipe.cpp" />
+    <ClCompile Include="EquipeMain.cpp" />
     <ClCompile Include="equipement.cpp" />
     <ClCompile Include="EquipementMain.cpp" />
     <ClCompile Include="ModAdherent.cpp" />
     <ClCompile Include="ModEntraineur.cpp" />
+    <ClCompile Include="ModEquipe.cpp" />
     <ClCompile Include="ModEquipement.cpp" />
+    <ClCompile Include="ModSeance.cpp" />
+    <ClCompile Include="ModSport.cpp" />
+    <ClCompile Include="MyForm.cpp" />
     <ClCompile Include="Personne.cpp" />
     <ClCompile Include="Program.cpp" />
+    <ClCompile Include="seance.cpp" />
+    <ClCompile Include="SeanceMain.cpp" />
+    <ClCompile Include="Sport.cpp" />
+    <ClCompile Include="SportMain.cpp" />
     <ClCompile Include="SuppEquipement.cpp" />
     <ClCompile Include="SuprAdherent.cpp" />
     <ClCompile Include="SuprEntraineur.cpp" />
+    <ClCompile Include="SuprEquipe.cpp" />
+    <ClCompile Include="SuprSeance.cpp" />
+    <ClCompile Include="SuprSport.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="AddAdherent.h">
@@ -152,7 +171,16 @@
     <ClInclude Include="AddEntraineur.h">
       <FileType>CppForm</FileType>
     </ClInclude>
+    <ClInclude Include="AddEquipe.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
     <ClInclude Include="AddEquipement.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="AddSeance.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="AddSport.h">
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="Adherent.h" />
@@ -162,7 +190,16 @@
     <ClInclude Include="AfficherEntraineur.h">
       <FileType>CppForm</FileType>
     </ClInclude>
+    <ClInclude Include="AfficherEquipe.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
     <ClInclude Include="AfficherEquipement.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="AfficherSeance.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="AfficherSport.h">
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="AtherentMain.h">
@@ -175,6 +212,10 @@
     <ClInclude Include="EntraineurMain.h">
       <FileType>CppForm</FileType>
     </ClInclude>
+    <ClInclude Include="Equipe.h" />
+    <ClInclude Include="EquipeMain.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
     <ClInclude Include="Equipement.h" />
     <ClInclude Include="EquipementMain.h">
       <FileType>CppForm</FileType>
@@ -185,10 +226,33 @@
     <ClInclude Include="ModEntraineur.h">
       <FileType>CppForm</FileType>
     </ClInclude>
+    <ClInclude Include="ModEquipe.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
     <ClInclude Include="ModEquipement.h">
       <FileType>CppForm</FileType>
     </ClInclude>
+    <ClInclude Include="ModSeance.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="ModSport.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="MyForm.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
     <ClInclude Include="Personne.h" />
+    <ClInclude Include="Seance.h" />
+    <ClInclude Include="SeanceMain.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="Sport.h" />
+    <ClInclude Include="SportMain.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="SuprEquipe.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
     <ClInclude Include="SuprEquipement.h">
       <FileType>CppForm</FileType>
     </ClInclude>
@@ -196,6 +260,12 @@
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="SuprEntraineur.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="SuprSeance.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="SuprSport.h">
       <FileType>CppForm</FileType>
     </ClInclude>
   </ItemGroup>
@@ -227,6 +297,9 @@
     <EmbeddedResource Include="EntraineurMain.resx">
       <DependentUpon>EntraineurMain.h</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="EquipementMain.resx">
+      <DependentUpon>EquipementMain.h</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ModAdherent.resx">
       <DependentUpon>ModAdherent.h</DependentUpon>
     </EmbeddedResource>
@@ -235,6 +308,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ModEquipement.resx">
       <DependentUpon>ModEquipement.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SeanceMain.resx">
+      <DependentUpon>SeanceMain.h</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SuprAdherent.resx">
       <DependentUpon>SuprAdherent.h</DependentUpon>

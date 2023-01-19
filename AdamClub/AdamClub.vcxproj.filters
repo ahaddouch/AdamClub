@@ -81,6 +81,63 @@
     <ClCompile Include="EquipementMain.cpp">
       <Filter>Header Files</Filter>
     </ClCompile>
+    <ClCompile Include="Sport.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Equipe.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="seance.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="AddSport.cpp">
+      <Filter>Header Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ModSport.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="SuprSport.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="AfficherSport.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="SportMain.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="AddEquipe.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ModEquipe.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="SuprEquipe.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="AfficherEquipe.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="EquipeMain.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="AddSeance.cpp">
+      <Filter>Header Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ModSeance.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="SuprSeance.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="MyForm.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="AfficherSeance.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="SeanceMain.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="AddAdherent.h">
@@ -141,6 +198,63 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Equipement.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Sport.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Equipe.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Seance.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="AddSport.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ModSport.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="SuprSport.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="AfficherSport.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="SportMain.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="AddEquipe.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ModEquipe.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="SuprEquipe.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="AfficherEquipe.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="EquipeMain.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="AddSeance.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ModSeance.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="SuprSeance.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="MyForm.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="AfficherSeance.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="SeanceMain.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

@@ -1,6 +1,7 @@
 #pragma once
 #include "AtherentMain.h"
 #include "EntraineurMain.h"
+#include "EquipementMain.h"
 namespace AdamClub {
 
 	using namespace System;
@@ -42,6 +43,8 @@ namespace AdamClub {
 	private: System::Windows::Forms::Button^ button2;
 	private: System::Windows::Forms::Button^ button1;
 	private: System::Windows::Forms::Button^ button5;
+	private: System::Windows::Forms::Panel^ p2;
+
 
 	private:
 		/// <summary>
@@ -58,6 +61,7 @@ namespace AdamClub {
 		{
 			System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(ClubMenu::typeid));
 			this->p1 = (gcnew System::Windows::Forms::Panel());
+			this->p2 = (gcnew System::Windows::Forms::Panel());
 			this->button4 = (gcnew System::Windows::Forms::Button());
 			this->button5 = (gcnew System::Windows::Forms::Button());
 			this->button3 = (gcnew System::Windows::Forms::Button());
@@ -71,17 +75,28 @@ namespace AdamClub {
 			this->p1->BackColor = System::Drawing::Color::Transparent;
 			this->p1->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"p1.BackgroundImage")));
 			this->p1->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Center;
+			this->p1->Controls->Add(this->p2);
 			this->p1->Controls->Add(this->button4);
 			this->p1->Controls->Add(this->button5);
 			this->p1->Controls->Add(this->button3);
 			this->p1->Controls->Add(this->button2);
 			this->p1->Controls->Add(this->button1);
-			this->p1->Dock = System::Windows::Forms::DockStyle::Bottom;
-			this->p1->Location = System::Drawing::Point(0, 1);
+			this->p1->Dock = System::Windows::Forms::DockStyle::Fill;
+			this->p1->Location = System::Drawing::Point(0, 0);
 			this->p1->Name = L"p1";
-			this->p1->Size = System::Drawing::Size(1284, 960);
+			this->p1->Size = System::Drawing::Size(1284, 771);
 			this->p1->TabIndex = 0;
 			this->p1->Paint += gcnew System::Windows::Forms::PaintEventHandler(this, &ClubMenu::p1_Paint);
+			// 
+			// p2
+			// 
+			this->p2->Dock = System::Windows::Forms::DockStyle::Fill;
+			this->p2->Location = System::Drawing::Point(0, 0);
+			this->p2->Name = L"p2";
+			this->p2->Size = System::Drawing::Size(1284, 771);
+			this->p2->TabIndex = 1;
+			this->p2->Click += gcnew System::EventHandler(this, &ClubMenu::p2_Click);
+			this->p2->Paint += gcnew System::Windows::Forms::PaintEventHandler(this, &ClubMenu::p2_Paint);
 			// 
 			// button4
 			// 
@@ -103,7 +118,7 @@ namespace AdamClub {
 			this->button5->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Zoom;
 			this->button5->Font = (gcnew System::Drawing::Font(L"MV Boli", 25, static_cast<System::Drawing::FontStyle>((System::Drawing::FontStyle::Bold | System::Drawing::FontStyle::Italic))));
 			this->button5->ForeColor = System::Drawing::Color::MidnightBlue;
-			this->button5->Location = System::Drawing::Point(552, 69);
+			this->button5->Location = System::Drawing::Point(550, 12);
 			this->button5->Name = L"button5";
 			this->button5->Size = System::Drawing::Size(198, 158);
 			this->button5->TabIndex = 0;
@@ -134,7 +149,7 @@ namespace AdamClub {
 			this->button2->Font = (gcnew System::Drawing::Font(L"MV Boli", 23, static_cast<System::Drawing::FontStyle>((System::Drawing::FontStyle::Bold | System::Drawing::FontStyle::Italic))));
 			this->button2->ForeColor = System::Drawing::Color::MidnightBlue;
 			this->button2->ImageAlign = System::Drawing::ContentAlignment::MiddleLeft;
-			this->button2->Location = System::Drawing::Point(225, 178);
+			this->button2->Location = System::Drawing::Point(197, 151);
 			this->button2->Name = L"button2";
 			this->button2->Size = System::Drawing::Size(201, 158);
 			this->button2->TabIndex = 0;
@@ -149,13 +164,14 @@ namespace AdamClub {
 			this->button1->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Zoom;
 			this->button1->Font = (gcnew System::Drawing::Font(L"MV Boli", 22, static_cast<System::Drawing::FontStyle>((System::Drawing::FontStyle::Bold | System::Drawing::FontStyle::Italic))));
 			this->button1->ForeColor = System::Drawing::Color::MidnightBlue;
-			this->button1->Location = System::Drawing::Point(853, 178);
+			this->button1->Location = System::Drawing::Point(899, 151);
 			this->button1->Name = L"button1";
 			this->button1->Size = System::Drawing::Size(211, 158);
 			this->button1->TabIndex = 0;
 			this->button1->Text = L" équipements";
 			this->button1->TextAlign = System::Drawing::ContentAlignment::BottomCenter;
 			this->button1->UseVisualStyleBackColor = true;
+			this->button1->Click += gcnew System::EventHandler(this, &ClubMenu::button1_Click);
 			// 
 			// ClubMenu
 			// 
@@ -163,11 +179,13 @@ namespace AdamClub {
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(13)), static_cast<System::Int32>(static_cast<System::Byte>(27)),
 				static_cast<System::Int32>(static_cast<System::Byte>(48)));
-			this->ClientSize = System::Drawing::Size(1284, 961);
+			this->ClientSize = System::Drawing::Size(1284, 771);
 			this->Controls->Add(this->p1);
+			this->Icon = (cli::safe_cast<System::Drawing::Icon^>(resources->GetObject(L"$this.Icon")));
 			this->Name = L"ClubMenu";
 			this->Text = L"ClubMenu";
 			this->FormClosing += gcnew System::Windows::Forms::FormClosingEventHandler(this, &ClubMenu::ClubMenu_FormClosing);
+			this->Load += gcnew System::EventHandler(this, &ClubMenu::ClubMenu_Load);
 			this->p1->ResumeLayout(false);
 			this->ResumeLayout(false);
 
@@ -176,21 +194,22 @@ namespace AdamClub {
 		public:
 			void AfficherFenetre(Form^ f)
 			{
-				if (p1->Controls->Count > 0)
+				p2->Show();
+				if (p2->Controls->Count > 0)
 				{
-					Form^ oldForm = dynamic_cast<Form^>(p1->Controls[0]);
+					Form^ oldForm = dynamic_cast<Form^>(p2->Controls[0]);
 					if (oldForm)
 						oldForm->Close();
 				}
 
-				p1->Controls->Clear();
+				p2->Controls->Clear();
 				f->TopLevel = false;
 				f->AutoScroll = true;
 
 				f->ControlBox = false;
 				f->MaximizeBox = false;
 				f->MinimizeBox = false;
-				this->p1->Controls->Add(f);
+				this->p2->Controls->Add(f);
 				f->Show();
 			}
 
@@ -199,7 +218,7 @@ namespace AdamClub {
 		AfficherFenetre(f);
 	}
 private: System::Void ClubMenu_FormClosing(System::Object^ sender, System::Windows::Forms::FormClosingEventArgs^ e) {
-	if (p1->Controls->Count > 0)
+	if (p2->Controls->Count > 0)
 	{
 		Form^ oldForm = (Form^)p1->Controls[0];
 		oldForm->Close();
@@ -212,6 +231,27 @@ private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e
 	EntraineurMain^ f = gcnew EntraineurMain();
 	AfficherFenetre(f);
 
+}
+private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
+	EquipementMain^ f = gcnew EquipementMain();
+	AfficherFenetre(f);
+
+}
+private: System::Void ClubMenu_Load(System::Object^ sender, System::EventArgs^ e) {
+
+	p2->Hide();
+}
+private: System::Void p2_Paint(System::Object^ sender, System::Windows::Forms::PaintEventArgs^ e) {
+	if (p2->Controls->Count ==0)
+	{
+		p2->Hide();
+	}
+}
+private: System::Void p2_Click(System::Object^ sender, System::EventArgs^ e) {
+	if (p2->Controls->Count == 0)
+	{
+		p2->Hide();
+	}
 }
 };
 }

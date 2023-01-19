@@ -1,2 +1,2 @@
-#include "SuppEquipement.h"
+#include "SuprEquipement.h"
 

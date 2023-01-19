@@ -196,18 +196,26 @@ private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e
 }
 private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
 
+	try
+	{
+		int id = Convert::ToInt64(txt_id->Text);
+		String^ nom = txt_nom->Text->ToString();
 
-	int id = Convert::ToInt64(txt_id->Text);
-	String^ nom = txt_nom->Text->ToString();
-	
-	DateTime^ da = dta->Value;
+		DateTime^ da = dta->Value;
 
-	Equipement eq(id, nom, da);
-	eq.uploadEquipement();
-	txt_id->Clear();
-	txt_nom->Clear();
+		Equipement eq(id, nom, da);
+		eq.uploadEquipement();
+		txt_id->Clear();
+		txt_nom->Clear();
+
+		dta->Value = DateTime::Now;
+	}
+	catch (Exception^ ex)
+	{
+		MessageBox::Show("data incorect",
+			"scoooooo!!!", MessageBoxButtons::OK);
+	}
 	
-	dta->Value = DateTime::Now;
 
 
 }
